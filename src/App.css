@@ -1,0 +1,23 @@
+.text-center {
+    margin: auto;
+    text-align: center;
+    align-items: center;
+}
+
+.max {
+    font-size: 8rem;
+    text-align: center;
+}
+
+i {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+p {
+    font-size: 1.2rem;
+}

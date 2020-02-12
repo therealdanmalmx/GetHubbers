@@ -4,8 +4,11 @@ import './App.css';
 function App() {
     return ( 
         <div className = "App" >
-            <span style={{fontSize: '1rem'}}> GetHubber </span> <span style={{fontSize: '.7rem'}}>Hitta kodare där kodare är: GitHub </span>
-            
+            <h1 style={{margin: 0, textTransform: 'uppercase', textAlign: 'center' }}>GetHubber</h1>
+            <p style={{margin: 0, textTransform: 'uppercase', textAlign: 'center'  }}>Hitta kodare där kodare är</p> 
+            <div className="max">
+                <i className="fab fa-github"></i>
+            </div>
         </div >
     );
 }
