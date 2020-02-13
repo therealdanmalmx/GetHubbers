@@ -5,7 +5,7 @@
 }
 
 .max {
-    font-size: 8rem;
+    font-size: 5rem;
     text-align: center;
 }
 
@@ -20,4 +20,33 @@ h1 {
 
 p {
     font-size: 1.2rem;
+}
+.cbox {
+    vertical-align: middle;
+    padding: .5rem;
+    border: 1px solid grey;
+    font-size: 1rem;
+    text-align: center;
+    padding-left: .1rem;
+}
+
+.alignCenter {
+    margin-top:   ;
+    text-align: center;
+}
+
+.label {
+    vertical-align: middle;
+    padding-left: .1rem;
+}
+
+.form {
+    padding-top: 1rem;
+    text-align: center;
+}
+
+.searchForm {
+    padding: 1rem;
+    min-width: 30rem;
+    border: 1px solid grey;
 }
