@@ -1,14 +1,19 @@
 import React, {useState} from 'react'
 import PropTypes from 'prop-types'
 
-function Languagesearch(props) {
+function Search(props) {
+    const [region, setRegion] = useState('');
     let [langCheck, setLangCheck] = useState('');
     const [langList,setlangList] = useState([]);
 
     const onChangeLang = (e) => {
-        langCheck = e.target.name;
-        setLangCheck(langCheck)
-        console.log(langCheck)
+        langCheck = e.target;
+        if(langCheck.checked) {
+            setLangCheck(langCheck.name);
+        } else if(!langCheck.checked) {
+            langCheck.name = ''
+            setLangCheck('');
+        }
         // if(e.target.checked) {
         //     langCheck = e.target.name;
         //     console.log(langCheck)
@@ -17,12 +22,12 @@ function Languagesearch(props) {
         // }
     }
 
-    const onSubmit = (e) => {
-        e.preventDefault();
-        props.searchLanguage(langCheck);
-        setLangCheck('')
+    // const onSubmit = (e) => {
+    //     e.preventDefault();
+    //     props.searchLanguage(langCheck);
+    //     setLangCheck('')
 
-    }
+    // }
 
     
     // const addToList = (e) => {
@@ -33,15 +38,25 @@ function Languagesearch(props) {
 
     // }
 
- 
+
+
+    const onType = (e) => {
+        setRegion(e.target.value)
+    }
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+        props.searchRegion(region, langCheck);
+        setRegion('');
+    }
+
     return (
-    <div className="text-center">
-        <form onSubmit={onSubmit}> 
+        <div>
+            <form onSubmit={onSubmit}> 
             <h3 style={{marginBottom: '1rem'}}>Välj språk</h3>
             <div style={boxStyle}>
                 <label htmlFor="javascript">JavaScript: 
                     <input className="cbox" type="checkbox" value={langList.name} onChange={onChangeLang} name="javascript" id="js"/>
-                    <input type="submit" value=""/>
                 </label>
                 <label htmlFor="c#">C#: 
                     <input className="cbox" type="checkbox" value={langList} onChange={onChangeLang} name="c#" id="csharp"/>
@@ -54,10 +69,18 @@ function Languagesearch(props) {
                 </label>
             </div>
         </form>
-    </div>
+        <form onSubmit={onSubmit} className="form">
+            <h3 style={{marginTop: '1.5rem', marginBottom: '1rem'}}>Leta efter kodare</h3>
+            <input className="searchBox" type="text" value={region} onChange={onType} placeholder="Ort i Sverige (eller lämna tomt för hela landet)"/>
+            <input className="btn btn-block" type="submit" value="Leta" style={{fontWeight: 'bold'}}/>
+        </form>
+        </div>
     )
 }
 
+Search.propTypes = {
+
+}
 const boxStyle = {
     width: '50%',
     display: 'flex',
@@ -67,9 +90,8 @@ const boxStyle = {
     margin: 'auto'
 }
 
-Languagesearch.propTypes = {
 
-}
 
-export default Languagesearch
+
+export default Search
 

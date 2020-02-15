@@ -6,17 +6,19 @@ import Navbar from "./components/layout/Navbar";
 import Langsearch from "./components/search/LanguageSearch";
 import Textsearch from "./components/search/TextSearch";
 import Frameworksearch from "./components/search/FrameworkSearch";
+import Search from "./components/search/Search";
 
 function App(props) {
 const [users, setUsers] = useState([]);    
 // const [text, setText] = useState('');
-const tatOrter = ['Stockholm', 'Malmö', 'Göteborg']
+const tatOrter = ['Stockholm', 'Malmö', 'Göteborg'];
 
-console.log(process.env.REACT_APP_GH_CID)
-const searchRegion = async (region) => {
+const searchRegion = async (region, langCheck) => {
+    console.log(langCheck);
+    console.log(region);
+
     if(tatOrter.includes(region) || region === '') {
-        console.log(`${region}`)
-            const res = await axios.get(`https://api.github.com/search/users?q=location:${region ? region: 'sweden'}&client_id=${process.env.REACT_APP_GH_CID}&client_secret=${process.env.REACT_APP_GH_CSC}`)
+            const res = await axios.get(`https://api.github.com/search/users?q=location:${region ? region : 'sweden'}&language:${langCheck}&client_id=${process.env.REACT_APP_GH_CID}&client_secret=${process.env.REACT_APP_GH_CSC}`)
             setUsers(res.data.items)
             console.log(res.data.items)
         } else {
@@ -31,9 +33,10 @@ const searchRegion = async (region) => {
             </div>
 
             <div className="container">
-                <Langsearch />
+                <Search searchRegion={searchRegion}/>
+                {/* <Langsearch searchLanguage={searchRegion}/>
                 <Frameworksearch />
-                <Textsearch searchRegion={searchRegion} />
+                <Textsearch searchRegion={searchRegion} /> */}
             </div>            
         </div >
         
