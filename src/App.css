@@ -41,7 +41,7 @@ p {
     border: 1px solid grey;
     font-size: 1rem;
     text-align: center;
-    margin: auto;
+    /* margin: auto; */
     margin-left: 0.5rem;
 }
 
@@ -62,8 +62,8 @@ p {
 }
 
 .container {
-    max-width: 75rem;
     margin: auto;
+    max-width: 75rem;
     text-align: center;
 } 
 
@@ -74,9 +74,9 @@ p {
     border: 1px solid #ccc;
 }
 
-  /* Buttons */
+/* Buttons */
 
-  .btn {
+.btn {
     margin: auto;
     margin-top: .5rem;
     text-transform: uppercase;
@@ -88,22 +88,28 @@ p {
     border: 1px solid black;
     cursor: pointer;
     outline: none;
-  }
+}
 
-  .btn:hover {
-      transition: ease-in 0.25s;
-      background: rgb(10, 184, 39);
-      color: white;
-      border: 1px solid white;
-    }
+.btn:hover {
+    transition: ease-in 0.25s;
+    background: rgb(10, 184, 39);
+    color: white;
+    border: 1px solid white;
+}
 
-  .btn-block {
-      text-align: center;
-      width: 50%;
-      display: block;
-  }
+.btn-block {
+    text-align: center;
+    width: 50%;
+    display: block;
+}
 
-  .container input[type="checkbox"] {
-      border-radius: 50%;
-      color: yellow;
-  }
+.alert {
+    margin-bottom: 1rem;
+    width: 50%;
+    padding: 0.4rem;
+    font-size: 1rem;
+}
+
+.alert-danger {
+    color: red;
+}

@@ -7,18 +7,20 @@ import Langsearch from "./components/search/LanguageSearch";
 import Textsearch from "./components/search/TextSearch";
 import Frameworksearch from "./components/search/FrameworkSearch";
 import Search from "./components/search/Search";
+import Alert from "./components/layout/Alert";
 
 function App(props) {
 const [users, setUsers] = useState([]);    
+const [alert, setAlert] = useState(null);    
 // const [text, setText] = useState('');
 const tatOrter = ['Stockholm', 'Malmö', 'Göteborg'];
 
-const searchRegion = async (region, langCheck) => {
+const searchRegion = async (langCheck, region) => {
     console.log(langCheck);
-    console.log(region);
+    console.log(region)
 
     if(tatOrter.includes(region) || region === '') {
-            const res = await axios.get(`https://api.github.com/search/users?q=location:${region ? region : 'sweden'}&language:${langCheck}&client_id=${process.env.REACT_APP_GH_CID}&client_secret=${process.env.REACT_APP_GH_CSC}`)
+            const res = await axios.get(`https://api.github.com/search/users?q=language:${langCheck}+location:${region ? region : 'sweden'}&client_id=${process.env.REACT_APP_GH_CID}&client_secret=${process.env.REACT_APP_GH_CSC}`)
             setUsers(res.data.items)
             console.log(res.data.items)
         } else {
@@ -26,14 +28,18 @@ const searchRegion = async (region, langCheck) => {
     }
 }
 
+const showAlert = (msg, type) => {
+    setAlert({msg: msg, type: type});
+    setTimeout(() => setAlert(null), 3000);
+}
+
     return ( 
         <div className = "App" >
             <Navbar />
-            <div className="bgImage">
-            </div>
 
             <div className="container">
-                <Search searchRegion={searchRegion}/>
+                <Alert alert={alert}/>
+                <Search searchRegion={searchRegion} showAlert={showAlert}/>
                 {/* <Langsearch searchLanguage={searchRegion}/>
                 <Frameworksearch />
                 <Textsearch searchRegion={searchRegion} /> */}
