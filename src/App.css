@@ -6,6 +6,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
+    background-image: url('./assets/coder.jpg') center/center;
 
 }
 
@@ -32,23 +33,14 @@ h1 {
     font-size: 3rem;
 }
 
+h3 {
+cursor: pointer;
+}
+
 p {
     font-size: 1.3rem;
 }
-.cbox {
-    vertical-align: middle;
-    padding: 0.5rem;
-    border: 1px solid grey;
-    font-size: 1rem;
-    text-align: center;
-    /* margin: auto; */
-    margin-left: 0.5rem;
-}
 
-.label {
-    vertical-align: middle;
-    margin-right: 0.5rem;
-}
 
 .form {
     padding-top: 1rem;
@@ -65,7 +57,7 @@ p {
     margin: auto;
     max-width: 75rem;
     text-align: center;
-} 
+}
 
 .searchBox {
     width: 50%;
@@ -88,10 +80,11 @@ p {
     border: 1px solid black;
     cursor: pointer;
     outline: none;
+    border-radius: 50px;
 }
 
 .btn:hover {
-    transition: ease-in 0.25s;
+    transition: ease-in 0.2s;
     background: rgb(10, 184, 39);
     color: white;
     border: 1px solid white;
@@ -105,11 +98,40 @@ p {
 
 .alert {
     margin-bottom: 1rem;
-    width: 50%;
+    width: 100%;
     padding: 0.4rem;
     font-size: 1rem;
+    background-color: red;
+    color: white;
+
 }
 
-.alert-danger {
-    color: red;
+.langCheck {
+    height: 20vh;
+}
+
+.frameCheck {
+    height: 20vh;
+}
+
+.search {
+    height: 10vh;
+}
+
+input[type="checkbox"] {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    -webkit-appearance: none;
+}
+
+:checked + label {
+    /* border: 3px dotted green; */
+    background-color: #52BE80;
+    border-radius: 20%;
+
+}
+
+.text-lg {
+    font-size: 3rem;
 }

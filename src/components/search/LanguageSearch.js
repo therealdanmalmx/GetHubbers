@@ -2,58 +2,21 @@ import React, {useState} from 'react'
 import PropTypes from 'prop-types'
 
 function Languagesearch(props) {
-    let [langCheck, setLangCheck] = useState('');
-    const [langList,setlangList] = useState([]);
-
-    const onChangeLang = (e) => {
-        langCheck = e.target.name;
-        setLangCheck(langCheck)
-        console.log(langCheck)
-        // if(e.target.checked) {
-        //     langCheck = e.target.name;
-        //     console.log(langCheck)
-        // } else  {
-        //     console.log('Choose a lang')
-        // }
-    }
-
-    const onSubmit = (e) => {
-        e.preventDefault();
-        props.searchLanguage(langCheck);
-        setLangCheck('')
-
-    }
-
-    
-    // const addToList = (e) => {
-    //     langList.forEach(x => {
-    //         langList.push(e.target.name);             
-    //     });
-    //     langList.splice(', ')
-
-    // }
-
  
     return (
-    <div className="text-center">
-        <form onSubmit={onSubmit}> 
-            <h3 style={{marginBottom: '1rem'}}>Välj språk</h3>
-            <div style={boxStyle}>
-                <label htmlFor="javascript">JavaScript: 
-                    <input className="cbox" type="checkbox" value={langList.name} onChange={onChangeLang} name="javascript" id="js"/>
-                    <input type="submit" value=""/>
-                </label>
-                <label htmlFor="c#">C#: 
-                    <input className="cbox" type="checkbox" value={langList} onChange={onChangeLang} name="c#" id="csharp"/>
-                </label>
-                <label htmlFor="java">Java: 
-                    <input className="cbox" type="checkbox" value={langList} onChange={onChangeLang} name="java" id="java"/>
-                </label>
-                <label htmlFor="kotlin">Kotlin: 
-                    <input className="cbox" type="checkbox" value={langCheck} onChange={onChangeLang} name="kotlin" id="kotlin"/>
-                </label>
-            </div>
-        </form>
+        <div className="langCheck">
+        <h3 >Välj språk</h3>
+        <h6 style={{marginBottom: '1rem', color: '#F1948A'}}>(minst ett är obligatoriskt)</h6>
+        <div style={boxStyle}>
+            <input type="checkbox" value="javascript" onChange={props.onChangeLang} name="javascript" id="js" style={{display: 'none'}}/>
+            <label htmlFor="js" className="devicon-javascript-plain colored text-lg" style={{cursor: 'pointer'}} />
+            <input type="checkbox" value="c#" onChange={props.onChangeLang} name="c#" id="csharp" style={{display: 'none'}}/>
+            <label htmlFor="csharp"className="devicon-csharp-plain colored text-lg" style={{cursor: 'pointer'}} />
+            <input type="checkbox" value="java" onChange={props.onChangeLang} name="java" id="java" style={{display: 'none'}}/>
+            <label htmlFor="java" className="devicon-java-plain colored text-lg" style={{cursor: 'pointer'}} />
+            <input type="checkbox" value="python" onChange={props.onChangeLang} name="python" id="python" style={{display: 'none'}}/>
+            <label htmlFor="python" className="devicon-python-plain colored text-lg" style={{cursor: 'pointer'}}/>
+        </div>
     </div>
     )
 }

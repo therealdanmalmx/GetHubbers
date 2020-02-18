@@ -26,7 +26,6 @@ const navbarStyle = {
     padding:' 0rem 2rem',
     zIndex: '1',
     width: '100vw',
-    marginBottom: '1rem'
 }
 
 const logoText = {
