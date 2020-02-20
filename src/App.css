@@ -6,12 +6,6 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-image: url('./assets/coder.jpg') center/center;
-
-}
-
-.bgImage {
-    background-image: url(./assets/coder.jpg) center/center;
 }
 
 h1, p {
@@ -22,11 +16,6 @@ h1, p {
     margin: auto;
     text-align: center;
     align-items: center;
-}
-
-i {
-    text-align: center;
-    margin-top: 1rem;
 }
 
 h1 {
@@ -97,7 +86,7 @@ p {
 }
 
 .alert {
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
     width: 100%;
     padding: 0.4rem;
     font-size: 1rem;
@@ -107,7 +96,11 @@ p {
 }
 
 .langCheck {
+    margin: 0;
     height: 20vh;
+    border-right: 1px solid #EAECEE;
+    height: 5vw;
+    margin-bottom: .5rem;
 }
 
 .frameCheck {
@@ -125,13 +118,22 @@ input[type="checkbox"] {
     -webkit-appearance: none;
 }
 
-:checked + label {
-    /* border: 3px dotted green; */
-    background-color: #52BE80;
-    border-radius: 20%;
-
+:checked + label {    
+    border-bottom: 1.5px solid #52BE80;
 }
 
 .text-lg {
-    font-size: 3rem;
+    font-size: 2rem;
+}
+
+.choiceChange {
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-evenly;
+    background-color: #F8F9F9;
+    height: 5vw;
+}
+
+.logoFontSize {
+    font-size: 1rem;
 }

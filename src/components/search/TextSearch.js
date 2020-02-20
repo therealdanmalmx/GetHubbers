@@ -2,33 +2,18 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
 function TextSearch(props) {
-    const [region, setRegion] = useState('');
 
-
-    const onType = (e) => {
-        setRegion(e.target.value)
-    }
-
-    const onSubmit = (e) => {
-        e.preventDefault();
-        props.searchRegion(region);
-        setRegion('');
-    }
 
     return (
-        <div>
-            <form onSubmit={onSubmit} className="form">
-                <h3 style={{marginTop: '1.5rem', marginBottom: '1rem'}}>Leta efter kodare</h3>
-                <input className="searchBox" type="text" value={region} onChange={onType} placeholder="Ort i Sverige (eller lämna tomt för hela landet)"/>
-                <input className="btn btn-block" type="submit" value="Leta" style={{fontWeight: 'bold'}}/>
-            </form>
-        </div>
-    )
+        <div className="search"> 
+        <h3 style={{marginTop: '1.5rem', marginBottom: '1rem'}}>Leta efter kodare i</h3>
+        <input className="searchBox" type="text" value={props.region} onChange={props.onType} placeholder="Ort i Sverige (eller lämna tomt för hela landet)"/>
+        <input className="btn btn-block" type="submit" value="Sök" style={{fontWeight: 'bold'}}/>
+    </div>
+
+)
 }
 
-TextSearch.propTypes = {
-
-}
 
 export default TextSearch
 

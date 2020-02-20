@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 function Navbar(props) {
     return (
         <div style={navbarStyle}>
-            <div className="logoText">
+            <div>
             <h1 style={logoText}>GetHubbers</h1>
             <p style={logoText}>Hitta kodare där kodare är</p> 
             </div>
@@ -18,7 +18,6 @@ function Navbar(props) {
 const navbarStyle = {
     overflow: 'hidden',
     backgroundColor: '#1000FF',
-    backgroundImage: 'URL(src/assets/coder.jpg) center/center',
     opacity: '.6',
     display: 'flex',
     justifyContent: 'space-between',

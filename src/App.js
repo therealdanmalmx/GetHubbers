@@ -9,6 +9,7 @@ import Frameworksearch from "./components/search/FrameworkSearch";
 import Search from "./components/search/Search";
 import Alert from "./components/layout/Alert";
 import tatOrter from '../src/tatOrter'
+import coder from './assets/coder.jpg'
 
 function App(props) {
 const [users, setUsers] = useState([]);    
@@ -22,6 +23,7 @@ const searchRegion = async (langCheck, frameCheck, region) => {
     if(tatOrter.includes(region) || region === '') {
             const res = await axios.get(`https://api.github.com/search/users?q=language:${langCheck && frameCheck ? `${langCheck}+${frameCheck}` : langCheck }+location:${region ? region : 'sweden'}&client_id=${process.env.REACT_APP_GH_CID}&client_secret=${process.env.REACT_APP_GH_CSC}`)
             setUsers(res.data.items)
+            region = '';
             console.log(res.data.items)
         } 
 }
@@ -39,9 +41,11 @@ const closeAlert = () => {
         <div className = "App" >
             <Navbar />
             <Alert alert={alert} closeAlert={closeAlert}/>
+            <Search searchRegion={searchRegion} showAlert={showAlert} />
 
-            <div className="container">
-                <Search searchRegion={searchRegion} showAlert={showAlert} />
+            <div 
+                className="container" 
+            >
                 {/* <Langsearch searchLanguage={searchRegion}/>
                 <Frameworksearch />
                 <Textsearch searchRegion={searchRegion} /> */}
