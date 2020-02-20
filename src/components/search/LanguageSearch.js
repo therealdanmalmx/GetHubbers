@@ -4,8 +4,8 @@ import PropTypes from 'prop-types'
 function Languagesearch(props) {
  
     return (
-        <div className="langCheck" style={{marginLeft: '1rem', marginTop: '0.5rem'}}>
-            <h3>Språk <span style={{display: 'inline', fontSize: '.8rem', color: '#F1948A'}}>(obligatoriskt)</span></h3>
+        <div className="langCheck" style={{marginLeft: '2rem', marginTop: '1rem'}}>
+            <h4 style={{textTransform: 'uppercase'}}>Språk <span style={{display: 'inline', fontSize: '.7rem', color: '#F1948A'}}>(obligatoriskt)</span></h4>
         <div style={boxStyle}>
             <input type="checkbox" value="javascript" onChange={props.onChangeLang} name="javascript" id="js" style={{display: 'none'}}/>
             <label htmlFor="js" className="devicon-javascript-plain colored text-lg" style={{cursor: 'pointer'}} >
@@ -33,7 +33,7 @@ function Languagesearch(props) {
 }
 
 const boxStyle = {
-    width: '70%',
+    width: '65%',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',

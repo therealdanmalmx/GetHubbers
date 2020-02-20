@@ -49,7 +49,7 @@ function Search(props) {
     }
 
     return (
-        <div style={{marginTop: '1rem'}}>
+        <div>
             <form onSubmit={onSubmit}>
                 <div className="choiceChange">
                 <LangSearch onChangeLang={onChangeLang} />

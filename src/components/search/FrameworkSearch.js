@@ -3,8 +3,8 @@ import React, {useState} from 'react'
 function FrameworkSearch(props) {
 
     return (
-        <div className="frameCheck" style={{marginLeft: '1rem', marginTop: '0.5rem'}}>
-        <h3>Ramverk</h3>
+        <div className="frameCheck" style={{marginLeft: '2rem', marginTop: '1rem'}}>
+        <h4 style={{textTransform: 'uppercase'}}>Ramverk</h4>
         <div style={boxStyle}>
             <input type="checkbox" value='angular' onChange={props.onChangeFrame} name="angular" id="angular" style={{display: 'none'}}/>
             <label htmlFor="angular" className="devicon-angularjs-plain colored text-lg" style={{cursor: 'pointer', hover:'JavaScript'}}>
@@ -31,7 +31,7 @@ function FrameworkSearch(props) {
 }
 
 const boxStyle = {
-    width: '70%',
+    width: '65%',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
