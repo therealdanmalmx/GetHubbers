@@ -3,13 +3,12 @@ import PropTypes from 'prop-types'
 
 function TextSearch(props) {
 
-
     return (
-        <div className="search"> 
-        <h3 style={{marginTop: '1.5rem', marginBottom: '1rem', textTransform: 'uppercase'}}>Leta efter kodare i</h3>
-        <input className="searchBox" type="text" value={props.region} onChange={props.onType} placeholder="Ort i Sverige (eller lämna tomt för hela landet)"/>
-        <input className="btn btn-block" type="submit" value="Sök" style={{fontWeight: 'bold'}}/>
-    </div>
+    <span className="search"> 
+        <h3 style={{verticalAlign: 'middle', paddingTop: '3rem', color: '#F7F9F9',  marginBottom: '3rem', textTransform: 'uppercase', textShadow: '1px 1px 5px black', fontSize: '2rem'}}>Leta efter kodare</h3>
+        <input className="searchBox" type="text" value={props.region} onChange={props.onType} placeholder=" En av Sveriges 20 största städer. Eller lämna tomt för hela landet"/>
+        <input className="btn" type="submit" value="Sök" style={{fontWeight: 'bold'}}/>
+    </span>
 
 )
 }

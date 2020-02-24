@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 import PropTypes from 'prop-types'
 
 function Navbar(props) {
@@ -9,26 +10,26 @@ function Navbar(props) {
             <p style={logoText}>Hitta kodare där kodare är</p> 
             </div>
             <div style={ghLogo}>
-                <i className="fab fa-github"></i>
+               <Link to='/'><i className="fab fa-github"></i></Link> 
             </div>
         </div>
     )
 }
 
 const navbarStyle = {
-    overflow: 'hidden',
-    backgroundColor: '#1000FF',
-    opacity: '.6',
+    position: 'fixed',
+    top: '0',
+    width: '100%',
+    backgroundColor: '#212F3D',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
     padding:' 0rem 2rem',
     zIndex: '1',
-    width: '100vw',
 }
 
 const logoText = {
-    color: '#F1C40F',
+    color: '#D7DBDD',
     margin: '0',
     padding: '0',
     textTransform: 'uppercase',
@@ -36,7 +37,7 @@ const logoText = {
 }
 
 const ghLogo = {
-    color: '#F1C40F',
+    color: '#D7DBDD',
     fontSize: '5rem'
 }
 

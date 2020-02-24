@@ -13,7 +13,7 @@ function Alert(props) {
             <div>
                 <b>{props.alert.msg}</b>
             </div>
-            <div onClick={props.closeAlert} style={{marginRight:'1rem', cursor: 'pointer'}} >
+            <div onClick={props.closeAlert} style={{marginRight:'2rem', cursor: 'pointer'}} >
                 <span className="fas fa-times"></span>
             </div>
         </div>

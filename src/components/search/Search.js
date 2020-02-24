@@ -4,20 +4,43 @@ import tatOrter from '../../tatOrter'
 import LangSearch from '../search/LanguageSearch'
 import FrameSearch from '../search/FrameworkSearch'
 import TextSearch from '../search/TextSearch'
+import { useHistory } from 'react-router-dom'
 
 function Search(props) {
-    const [region, setRegion] = useState('');
+    let [region, setRegion] = useState('');
     let [langCheck, setLangCheck] = useState('');
     let [frameCheck, setFrameCheck] = useState('');
-    const [langList,setlangList] = useState([]);
+    let [langList, setLangList] = useState([]);
+    let [frameList, setframeList] = useState([]);
 
+    let history = useHistory();
+    
     const onChangeLang = (e) => {
         langCheck = e.target;
         console.log(langCheck.checked)
         if(langCheck.checked) {
-            setLangCheck(e.target.name);
-        } else {
-            setLangCheck('');
+            setLangCheck(langList.push(e.target.name));
+        } else if(langCheck.checked === false) {
+            switch (e.target.name) {
+                case "javascript": 
+                    langList.splice("javascript", 1)
+                    break;
+                case "csharp": 
+                    langList.splice("csharp", 1)
+                    break;
+                case "java": 
+                    langList.splice("java", 1)
+                    break;
+                case "python": 
+                    langList.splice("python", 1)
+                    break;
+                case "php": 
+                    langList.splice("php", 1)
+                    break;
+            
+                default:
+                    break;
+            }
         }
     }
 
@@ -25,9 +48,28 @@ function Search(props) {
         frameCheck = e.target;
         console.log(frameCheck.checked)
         if(frameCheck.checked) {
-            setFrameCheck(e.target.name);
-        } else {
-            setFrameCheck('');
+            setFrameCheck(frameList.push(e.target.name));
+        }  else if(frameCheck.checked === false) {
+            switch (e.target.name) {
+                case "angular": 
+                    langList.splice("angular", 1)
+                    break;
+                case "react": 
+                    langList.splice("react", 1)
+                    break;
+                case "dotnet": 
+                    langList.splice("dotnet", 1)
+                    break;
+                case "laravel": 
+                    langList.splice("laravel", 1)
+                    break;
+                case "django": 
+                    langList.splice("django", 1)
+                    break;
+            
+                default:
+                    break;
+            }
         }
     }
 
@@ -37,15 +79,14 @@ function Search(props) {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        if (langCheck === '') { 
-            props.showAlert('Välj minst ett programmeringspråk');
+        if (!frameCheck && !langCheck) { 
+            props.showAlert('Välj minst ett programmeringspråk eller ramverk');
         } else if (region && !tatOrter.includes(region)) {
-            props.showAlert(`${region} är inte en svensk tätort. Eller så är det misstavat.`);
+            props.showAlert(`${region} är inte en av Sveriges 20 största städer. Eller så är det misstavat.`);
         } else {
-            props.searchRegion(langCheck, frameCheck, region);
-            setRegion('');
+            props.searchRegion(langList.join('+'), frameList.join('+'), region);
+            history.push('/profiles')
         }
-
     }
 
     return (
@@ -55,7 +96,7 @@ function Search(props) {
                 <LangSearch onChangeLang={onChangeLang} />
                 <FrameSearch onChangeFrame={onChangeFrame} />
                 </div>
-                <div className="container">
+                <div>
                 <TextSearch onType={onType} />
                 </div>
             </form>
@@ -67,14 +108,6 @@ Search.propTypes = {
     setAlert: PropTypes.func.isRequired,
     searchRegion: PropTypes.func.isRequired,
 
-}
-const boxStyle = {
-    width: '50%',
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    textAlign: 'center',
-    margin: 'auto'
 }
 
 export default Search
