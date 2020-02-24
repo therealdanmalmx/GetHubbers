@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { Link } from "react-router-dom";
 
 
@@ -18,18 +17,7 @@ function ProfileItem(props) {
                 <Link to={`/profile/${login}`} className="profileBtn">Se profil</Link>
             </div>  
     </span>
-        // <div className="card">
-        //     <img src={avatar_url} alt="" style={{width: '60px', borderRadius: '50%'}}/>
-        //     <h3>{login}</h3>
-        //     <div  style={{marginTop: '1.5rem', textAlign: 'center'}}>
-        //         <a href={`/profile/${login}`} className="btn">More</a>
-        //     </div>  
-        // </div>
     )
-}
-
-ProfileItem.propTypes = {   
-
 }
 
 const loginStyle = {

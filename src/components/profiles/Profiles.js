@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import ProfileItem from './ProfileItem'
 import { Link } from "react-router-dom";
 
@@ -16,10 +16,6 @@ function Profiles(props) {
 
         </div>
     )
-}
-
-Profiles.propTypes = {
-
 }
 
 const profileStyle = {

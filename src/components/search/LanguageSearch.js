@@ -1,35 +1,9 @@
-import React, {useState} from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
 function Languagesearch(props) {
  
     return (
-        // <div className="langCheck" style={{position: 'relative', top: '50'}}>
-        //     <span className='sideBox'><h4 style={{textTransform: 'uppercase', marginLeft: '2rem', marginTop: '1rem'}}>Språk <span style={{display: 'inline', fontSize: '.6rem', color: '#F1948A'}} >(obligatoriskt)</span></h4></span>
-        //     <div style={boxStyle}>
-        //         <input type="checkbox" value="javascript" onChange={props.onChangeLang} name="javascript" id="js" style={{display: 'none'}}/>
-        //         <label htmlFor="js" className="devicon-javascript-plain  text-lg" style={{cursor: 'pointer'}} >
-        //             <p className="logoFontSize">JavaScript</p>
-        //         </label>
-        //         <input type="checkbox" value="c#" onChange={props.onChangeLang} name="c#" id="csharp" style={{display: 'none'}}/>
-        //         <label htmlFor="csharp"className="devicon-csharp-plain  text-lg" style={{cursor: 'pointer'}}>
-        //             <p className="logoFontSize">Csharp</p>
-        //         </label>
-        //         <input type="checkbox" value="java" onChange={props.onChangeLang} name="java" id="java" style={{display: 'none'}}/>
-        //         <label htmlFor="java" className="devicon-java-plain  text-lg" style={{cursor: 'pointer'}} >
-        //             <p className="logoFontSize">Java</p>
-        //         </label>
-        //         <input type="checkbox" value="python" onChange={props.onChangeLang} name="python" id="python" style={{display: 'none'}}/>
-        //         <label htmlFor="python" className="devicon-python-plain  text-lg" style={{cursor: 'pointer'}}>
-        //             <p className="logoFontSize">Python</p>
-        //         </label>
-        //         <input type="checkbox" value="php" onChange={props.onChangeLang} name="php" id="php" style={{display: 'none'}}/>
-        //         <label htmlFor="php" className="devicon-php-plain  text-lg" style={{cursor: 'pointer'}}>
-        //             <p className="logoFontSize">PHP</p>
-        //         </label>
-        //     </div>
-        // </div>
-
         <span  className="langCheck">
             <span>
                 <span className="sideBox">
@@ -74,10 +48,6 @@ const boxStyle = {
     alignItems: 'center',
     textAlign: 'center',
     margin: 'auto'
-}
-
-Languagesearch.propTypes = {
-
 }
 
 export default Languagesearch

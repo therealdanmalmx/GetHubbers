@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import PropTypes from 'prop-types'
 import tatOrter from '../../tatOrter'
 import LangSearch from '../search/LanguageSearch'
 import FrameSearch from '../search/FrameworkSearch'
@@ -102,12 +101,6 @@ function Search(props) {
             </form>
         </div>
     )
-}
-
-Search.propTypes = {
-    setAlert: PropTypes.func.isRequired,
-    searchRegion: PropTypes.func.isRequired,
-
 }
 
 export default Search

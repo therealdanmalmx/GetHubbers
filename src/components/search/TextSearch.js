@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import PropTypes from 'prop-types'
 
 function TextSearch(props) {
 
@@ -9,8 +8,7 @@ function TextSearch(props) {
         <input className="searchBox" type="text" value={props.region} onChange={props.onType} placeholder=" En av Sveriges 20 största städer. Eller lämna tomt för hela landet"/>
         <input className="btn" type="submit" value="Sök" style={{fontWeight: 'bold'}}/>
     </span>
-
-)
+    )
 }
 
 

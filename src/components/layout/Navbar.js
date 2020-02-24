@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-import PropTypes from 'prop-types'
 
 function Navbar(props) {
     return (
@@ -39,10 +38,6 @@ const logoText = {
 const ghLogo = {
     color: '#D7DBDD',
     fontSize: '5rem'
-}
-
-Navbar.propTypes = {
-
 }
 
 export default Navbar

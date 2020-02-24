@@ -7,7 +7,6 @@ import Navbar from "./components/layout/Navbar";
 import Search from "./components/search/Search";
 import Alert from "./components/layout/Alert";
 import Profiles from "./components/profiles/Profiles";
-import ProfileItem from "./components/profiles/ProfileItem";
 import Profile from "./components/profiles/Profile";
 import tatOrter from '../src/tatOrter'
 
@@ -17,9 +16,6 @@ function App(props) {
     const [profiler, setProfiler] = useState({});    
 
 const searchRegion = async (langList, frameList, region) => {
-    console.log(region);
-    console.log(langList);
-    console.log(frameList);
 
     if(tatOrter.includes(region) || region === '') {
             const res = await axios.get(`https://api.github.com/search/users?q=language:${langList && frameList ? `${langList}+${frameList}` : langList}+location:${region ? region : 'sweden'}&client_id=${process.env.REACT_APP_GH_CID}&client_secret=${process.env.REACT_APP_GH_CSC}`)
@@ -31,7 +27,6 @@ const searchRegion = async (langList, frameList, region) => {
 const getProfile = async (login) => {
     const res = await axios.get(`https://api.github.com/users/${login}?client_id=${process.env.REACT_APP_GH_CID}&client_secret=${process.env.REACT_APP_GH_CSC}`)
     setProfiler(res.data);
-    console.log(res.data);
 }
 
 const showAlert = (msg) => {
