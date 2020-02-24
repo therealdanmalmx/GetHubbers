@@ -82,7 +82,14 @@ function Search(props) {
             props.showAlert('Välj minst ett programmeringspråk');
         } else if (region && !tatOrter.includes(region)) {
             props.showAlert(`${region} är inte en av Sveriges 20 största städer. Eller så är det misstavat.`);
-        } else {
+            history.replace('/')
+        } else if (!props.profiles) {
+            props.showAlert('Det fanns inga profiler baserat på dina val')
+            setTimeout(() => window.location.reload(), 2000);
+            
+            // history.goBack()
+        } 
+        else {
             props.searchRegion(langList.join('+'), frameList.join('+'), region);
             history.push('/profiles')
         }

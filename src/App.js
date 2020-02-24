@@ -31,11 +31,13 @@ const getProfile = async (login) => {
 
 const showAlert = (msg) => {
     setAlert({msg});
-    setTimeout(() => setAlert(null), 10000);
+    setTimeout(() => [setAlert(null), window.location.reload()], 10000);
+    
 }
 
 const closeAlert = () => {
     setAlert(null);
+    window.location.reload();
 }
 
     return ( 
@@ -46,7 +48,7 @@ const closeAlert = () => {
                 <Switch>
                     <Route exact path='/' render={props => (
                         <Fragment>
-                            <Search searchRegion={searchRegion} showAlert={showAlert} />
+                            <Search searchRegion={searchRegion} showAlert={showAlert} profile={profiles} />
                         </Fragment>
                     )}/>
                     <Route exact path='/profiles' render={props => (

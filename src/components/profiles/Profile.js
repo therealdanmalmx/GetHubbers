@@ -31,7 +31,7 @@ function Profile(props) {
                     </div>
                 )}
                 <span style={htmlStyle}>
-                    <a href={html_url} target="_blank"><i className="fab fa-github" /><h5 style={htmlStyle.profileText}>GitHub Profil</h5> </a>
+                    <a href={html_url} target="_blank" rel="noopener noreferrer"><i className="fab fa-github" /><h5 style={htmlStyle.profileText}>GitHub Profil</h5> </a>
                 </span>
                 <ul style={divStyle}>
                         {email && <Fragment>
@@ -41,7 +41,7 @@ function Profile(props) {
                             <li><strong>Företag: </strong> {company}</li>
                         </Fragment> }
                         {blog && <Fragment>
-                            <li><strong><a href={blog} target="_blank" style={{textDecoration: 'none'}}>Webbsida</a></strong></li>
+                            <li><strong><a href={blog} target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none'}}>Webbsida</a></strong></li>
                         </Fragment> }
                 </ul>
             </div>
