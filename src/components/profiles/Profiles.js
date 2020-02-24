@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 function Profiles(props) {
 
     return (
+        
         <div className="container">
             <Link to="/"><i className="fas fa-arrow-circle-left backBtn"></i></Link>
             <div style={profileStyle}>
