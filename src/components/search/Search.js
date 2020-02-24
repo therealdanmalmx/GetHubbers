@@ -85,7 +85,7 @@ function Search(props) {
             history.replace('/')
         } else if (!props.profiles) {
             props.showAlert('Det fanns inga profiler baserat på dina val')
-            setTimeout(() => window.location.reload(), 2000);
+            setTimeout(() => window.location.reload(), 3000);
             
             // history.goBack()
         } 
