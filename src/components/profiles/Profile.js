@@ -7,7 +7,7 @@ function Profile(props) {
         props.getProfile(props.match.params.login)
     }, [])
 
-    const {login, avatar_url, html_url, name, hireable, blog, bio, location, followers, following, public_repos, public_gists, company, email} = props.profiler;
+    const {avatar_url, html_url, name, hireable, blog, bio, location, company, email} = props.profiler;
     return (
 
         <Fragment>
@@ -16,13 +16,35 @@ function Profile(props) {
                 {name}
             </div>
             <div>
-                {hireable === true ? <h4 className="hireable">Öppen för nya möjligheter</h4> : null}
+                {hireable === true ? <h4 className="hireable">Öppen för nya möjligheter, eller freelancer.</h4> : null}
             </div>
             <div>
                 <img src={avatar_url} alt="" style={avatarStyle}/>
             </div>
             <div style={locationStyle}>
                 {location}
+            </div >
+            <div >
+                {bio && (
+                    <div style={bioStyle}>
+                        <h3>Bio: </h3>
+                        <span>{bio}</span>
+                    </div>
+                )}
+                <span style={htmlStyle}>
+                    <a href={html_url} target="_blank"><i className="fab fa-github" /><h5 style={htmlStyle.profileText}>GitHub Profil</h5> </a>
+                </span>
+                <ul style={divStyle}>
+                        {email && <Fragment>
+                            <li><strong>Email: </strong> {email}</li> 
+                        </Fragment> }
+                        {company && <Fragment>
+                            <li><strong>Företag: </strong> {company}</li>
+                        </Fragment> }
+                        {blog && <Fragment>
+                            <li><strong><a href={blog} target="_blank" style={{textDecoration: 'none'}}>Webbsida</a></strong></li>
+                        </Fragment> }
+                </ul>
             </div>
 
 
@@ -54,8 +76,37 @@ const avatarStyle = {
     borderRadius: '50%', 
     marginLeft: '25rem', 
     border: '2px solid #D7DBDD'
-
 }
 
+const bioStyle = {
+    width: '50vw', 
+    margin: 'auto',
+    marginLeft: '30rem', 
+    fontSize: '2rem',
+    color: '#D7DBDD'
+}
+
+const htmlStyle = {
+    marginLeft: '30rem', 
+    color: 'white',
+    cursor: 'pointer',
+    padding: '.8rem',
+    fontSize: '3rem',
+    profileText: {
+        fontSize: '1rem',
+        textDecoration: 'none', 
+        marginLeft: '.5rem', 
+        display: 'inline-block', 
+        verticalAlign: 'middle' 
+    }
+}
+
+const divStyle = {
+    marginLeft: '30rem', 
+    color: 'white',
+    padding: '.8rem',
+    fontSize: '1.5rem',
+
+}
 export default Profile
 

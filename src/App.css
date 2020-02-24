@@ -199,17 +199,15 @@ input[type="checkbox"] {
 /* CARD */
 
 .card {
-    position: relative;
-    top: auto;
-    width: 20vw;
-    height: 12.6vh;
+    width: 23vw;
+    height: 9.4vh;
     border: 2px solid #D7DBDD;
     background-color: #273746;
     border-radius: 100px;
 }
 
 .sideCard {
-    height: 12vh; 
+    height: 9vh; 
     float: left;
     border-radius: 100px;
 }

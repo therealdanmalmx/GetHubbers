@@ -79,8 +79,8 @@ function Search(props) {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        if (!frameCheck && !langCheck) { 
-            props.showAlert('Välj minst ett programmeringspråk eller ramverk');
+        if (!langCheck) { 
+            props.showAlert('Välj minst ett programmeringspråk');
         } else if (region && !tatOrter.includes(region)) {
             props.showAlert(`${region} är inte en av Sveriges 20 största städer. Eller så är det misstavat.`);
         } else {
