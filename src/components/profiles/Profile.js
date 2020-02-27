@@ -11,6 +11,30 @@ function Profile(props) {
 
         <Fragment>
             <Link to="/profiles"><i className="fas fa-arrow-circle-left backBtn"></i></Link>
+        <div class="frame">
+            <div class="picture">
+                <img src={avatar_url} alt=""/>
+            </div>
+                <div class="social twitter">
+                    <a href="https://twitter.com/tamer_aka_remat" target="_blank">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            
+                <div class="social linkedin">
+                    <a href="https://www.linkedin.com/in/amtamer/?locale=en_US" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            
+                <div class="social codepen">
+                    <a href="https://codepen.io/tamer_aka_remat/" target="_blank">
+                        <i class="fab fa-codepen"></i>
+                    </a>
+                </div>
+        </div>
+
+            {/* <Link to="/profiles"><i className="fas fa-arrow-circle-left backBtn"></i></Link>
             <div style={profileStyle}>
                 {name}
             </div>
@@ -44,7 +68,7 @@ function Profile(props) {
                             <li><strong><a href={blog} target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none'}}>Webbsida</a></strong></li>
                         </Fragment> }
                 </ul>
-            </div>
+            </div> */}
         </Fragment>
     )
 }
