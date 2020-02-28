@@ -59,8 +59,8 @@ body {
 			background-size:cover;
         }
         img {
-            border-radius: 10%;
-            width: 20%
+            border-radius: 10px;
+            width: 25%
         }
 		
 		
@@ -166,7 +166,9 @@ input[type="checkbox"] {
 
 .choiceChange {
     position: relative;
-    top: 96px;
+    overflow: hidden;
+    width: 100%;
+    top: 90px;
     display:grid;
     grid-template-columns: repeat(2, 1fr);
     justify-content: space-between;
@@ -242,7 +244,7 @@ input[type="checkbox"] {
 }
 .alert {
     position: relative;
-    top: 96px;
+    top: 93px;
     width: 100%;
     padding: 0.5rem;
     font-size: 1rem;
@@ -254,17 +256,17 @@ input[type="checkbox"] {
 /* CARD */
 
 .card {
-    width: 23vw;
-    height: 9.4vh;
-    border: 2px solid #D7DBDD;
-    background-color: #273746;
-    border-radius: 100px;
+    height: auto;
+    // width: 23vw;
+    // height: 9.4vh;
+    // border: 2px solid #D7DBDD;
+    // background-color: #273746;
+    // border-radius: 100px;
 }
 
 .sideCard {
-    height: 9vh; 
-    float: left;
-    border-radius: 100px;
+    height: 35vh; 
+    border-radius: 10px;
 }
 
 .hireable {
@@ -280,3 +282,4 @@ input[type="checkbox"] {
 }
 
 // PROFILE
+

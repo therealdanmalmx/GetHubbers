@@ -90,7 +90,8 @@ const locationStyle = {
 }
 
 const avatarStyle = {
-    width: '200px', 
+    // width: '200px',
+    height: '', 
     borderRadius: '50%', 
     marginLeft: '25rem', 
     border: '2px solid #D7DBDD'

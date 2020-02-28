@@ -10,9 +10,7 @@ function ProfileItem(props) {
             <span>
                 <img src={avatar_url} alt="" className="sideCard"/>
             </span>
-            <div style={loginStyle}>
-                <span>{login}</span>
-            </div>
+            <span style={loginStyle}>{login}</span>
             <div>
                 <Link to={`/profile/${login}`} className="profileBtn">Se profil</Link>
             </div>  
@@ -21,11 +19,14 @@ function ProfileItem(props) {
 }
 
 const loginStyle = {
-    position: 'absolute',
-    top: 'auto',
-    margin: '0 0 0 5.5rem',
-    color: '#D7DBDD', 
+    display: 'flex',
+    justifyDisplay: 'space-between',
+    position: 'relative',
+    witth: '10%',
+    // margin: '0 0 0 5.5rem',
+    color: 'black', 
     fontSize: '2rem', 
+    top: '20px'
 }
 
 
