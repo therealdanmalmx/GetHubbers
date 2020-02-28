@@ -8,7 +8,7 @@ function ProfileItem(props) {
     return (
     <span  className="card">
             <span>
-                <img src={avatar_url} alt="" className="sideCard"/>
+                <img src={avatar_url} alt="GitHub avatar" className="sideCard"/>
             </span>
             <span style={loginStyle}>{login}</span>
             <div>
@@ -19,14 +19,17 @@ function ProfileItem(props) {
 }
 
 const loginStyle = {
-    display: 'flex',
-    justifyDisplay: 'space-between',
-    position: 'relative',
-    witth: '10%',
-    // margin: '0 0 0 5.5rem',
+
+    position: 'absolute',
+    top: '6%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+
+    // position: 'relative',
+    // top: '0',
+    textShadow: '2px 2px 10px #D7DBDD',
     color: 'black', 
     fontSize: '2rem', 
-    top: '20px'
 }
 
 
