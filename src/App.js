@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Fragment } from 'react';
-import './App.css';
+import './App.scss';
 import axios from 'axios';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
