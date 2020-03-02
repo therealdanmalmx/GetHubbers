@@ -18,11 +18,9 @@ function Profile(props) {
             <div style={profileStyle}>
                 {name}
             </div>
-            <div style={hireableStyle}>
-                {hireable === true ? <div></div> : null}
-            </div>
+                {hireable === true ? <div style={hireableStyle}></div> : null}
             <div style={gitHubStyle}>
-                <a href={html_url} target="_blank" rel="noopener noreferrer">               
+                <a href={html_url} target="_blank" rel="noopener noreferrer" style={{color: '#F1C40F'}} className="github">               
                     <i class="fab fa-github"></i>
                 </a>
             </div>
@@ -39,7 +37,7 @@ function Profile(props) {
                     <strong>Jobbar på: </strong> {company}
                 </div> }
                 {blog && <div style={blogStyle}>
-                    <a href={blog} target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none'}}><i class="fab fa-internet-explorer"></i></a>
+                    <a href={blog} target="_blank" rel="noopener noreferrer" style={{color: '#1B4F72'}}><i class="fab fa-chrome"></i></a>
                 {email && <div style={emailStyle}>
                     <strong>Email: </strong> {email}
                 </div> }
@@ -66,14 +64,16 @@ const hireableStyle = {
     textAlign: 'center',
     padding: '2rem',
     backgroundColor: 'green',
-    borderRadius: '100px'
+    borderRadius: '100px',
+    cursor: 'pointer'
 }
 
 const gitHubStyle = {
     position: 'absolute',
     top: '170px',
     right: '50px',
-    fontSize: '4rem'
+    fontSize: '4rem',
+    color: '#F1C40F',
 }
 
 const locationStyle = {
@@ -88,9 +88,9 @@ const bioStyle = {
     position:'absolute',
     top: '180px',
     left: '505px',
-    width: '50vw', 
+    width: '45vw', 
     fontSize: '2rem',
-    color: '#D7DBDD'
+    color: '#D7DBDD'    
 }
 
 const companyStyle = {
@@ -107,12 +107,13 @@ const blogStyle = {
     position:'absolute',
     top: '280px',
     right: '50px',
-    color: '#D7DBDD',
     fontSize: '2rem',
     listStyle: 'none', 
     marginTop: '.8rem',
-    fontSize: '4rem'
+    fontSize: '4rem',
+    textDecoration: 'none',     
 }
+
 const emailStyle = {
     position:'absolute',
     top: '38px',

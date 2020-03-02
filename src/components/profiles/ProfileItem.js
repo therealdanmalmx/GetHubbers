@@ -21,7 +21,7 @@ function ProfileItem(props) {
 const loginStyle = {
 
     position: 'absolute',
-    top: '6%',
+    top: '10%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
 
