@@ -52,7 +52,7 @@ function Profile(props) {
 const profileStyle = {
     position:'absolute',
     top: '25px',
-    left: '500px',
+    left: '600px',
     color: '#D7DBDD',
     fontSize: '5rem',
 
@@ -81,7 +81,7 @@ const gitHubStyle = {
 const locationStyle = {
     position:'absolute',
     top: '120px',
-    left: '505px',
+    left: '605px',
     fontSize: '2rem',
     color: '#D7DBDD'
 }
@@ -89,16 +89,16 @@ const locationStyle = {
 const bioStyle = {
     position:'absolute',
     top: '180px',
-    left: '505px',
-    width: '45v w', 
+    left: '605px',
+    width: '45vw', 
     fontSize: '2rem',
-    color: '#D7DBDD'    
+    color: '#D7DBDD',  
 }
 
 const companyStyle = {
     position:'absolute',
     top: '280px',
-    left: '505px',
+    left: '605px',
     color: '#D7DBDD',
     fontSize: '2rem',
     listStyle: 'none', 

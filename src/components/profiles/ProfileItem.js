@@ -12,7 +12,7 @@ function ProfileItem(props) {
             </span>
             <span style={loginStyle}>{login}</span>
             <div>
-                <Link to={`/profile/${login}`} className="profileBtn">Se profil</Link>
+                <Link to={`/profile/${login}`} className="profileBtn">Profil</Link>
             </div>  
     </span>
     )
@@ -21,19 +21,17 @@ function ProfileItem(props) {
 const loginStyle = {
 
     position: 'absolute',
-    top: '10%',
+    top: '6.5%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
 
-    // position: 'relative',
-    // top: '0',
     textShadow: '2px 2px 10px #D7DBDD',
     color: 'black', 
     fontSize: '2rem', 
     backgroundColor: 'white',
     padding: '.5rem 0',
     opacity: '.8',
-    width: '72%',
+    width: '100%',
     borderTopLeftRadius: '10px',
     borderTopRightRadius: '10px',
 }
