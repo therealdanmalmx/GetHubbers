@@ -30,6 +30,12 @@ const loginStyle = {
     textShadow: '2px 2px 10px #D7DBDD',
     color: 'black', 
     fontSize: '2rem', 
+    backgroundColor: 'white',
+    padding: '.5rem 0',
+    opacity: '.8',
+    width: '72%',
+    borderTopLeftRadius: '10px',
+    borderTopRightRadius: '10px',
 }
 
 

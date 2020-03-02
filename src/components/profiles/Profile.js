@@ -55,6 +55,8 @@ const profileStyle = {
     left: '500px',
     color: '#D7DBDD',
     fontSize: '5rem',
+
+    
 }
 
 const hireableStyle = {
@@ -88,7 +90,7 @@ const bioStyle = {
     position:'absolute',
     top: '180px',
     left: '505px',
-    width: '45vw', 
+    width: '45v w', 
     fontSize: '2rem',
     color: '#D7DBDD'    
 }
