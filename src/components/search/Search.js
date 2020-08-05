@@ -21,11 +21,17 @@ function Search(props) {
             setLangCheck(langList.push(e.target.name));
         } else if(langCheck.checked === false) {
             switch (e.target.name) {
+                case "c": 
+                    langList.splice("c", 1)
+                    break;
                 case "javascript": 
                     langList.splice("javascript", 1)
                     break;
                 case "csharp": 
                     langList.splice("csharp", 1)
+                    break;
+                case "cplusplus": 
+                    langList.splice("cplusplus", 1)
                     break;
                 case "java": 
                     langList.splice("java", 1)
@@ -35,6 +41,12 @@ function Search(props) {
                     break;
                 case "php": 
                     langList.splice("php", 1)
+                    break;
+                case "go": 
+                    langList.splice("go", 1)
+                    break;
+                case "ruby": 
+                    langList.splice("ruby", 1)
                     break;
             
                 default:
@@ -56,6 +68,12 @@ function Search(props) {
                 case "react": 
                     langList.splice("react", 1)
                     break;
+                case "vue": 
+                    langList.splice("vue", 1)
+                    break;
+                case "express": 
+                    langList.splice("express", 1)
+                    break;
                 case "dotnet": 
                     langList.splice("dotnet", 1)
                     break;
@@ -64,6 +82,9 @@ function Search(props) {
                     break;
                 case "django": 
                     langList.splice("django", 1)
+                    break;
+                case "rails": 
+                    langList.splice("rails", 1)
                     break;
             
                 default:

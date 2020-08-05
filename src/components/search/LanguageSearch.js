@@ -13,6 +13,10 @@ function Languagesearch(props) {
                     </label>
                 </span>
                 <span style={boxStyle}>
+                    <input type="checkbox" value="c" onChange={props.onChangeLang} name="c" id="c" style={{display: 'none'}}/>
+                    <label htmlFor="c" className="devicon-c-plain  text-lg" style={{cursor: 'pointer'}} >
+                        <p className="logoFontSize">C</p>
+                    </label>
                     <input type="checkbox" value="javascript" onChange={props.onChangeLang} name="javascript" id="js" style={{display: 'none'}}/>
                     <label htmlFor="js" className="devicon-javascript-plain  text-lg" style={{cursor: 'pointer'}} >
                         <p className="logoFontSize">JavaScript</p>
@@ -20,6 +24,18 @@ function Languagesearch(props) {
                     <input type="checkbox" value="c#" onChange={props.onChangeLang} name="csharp" id="csharp" style={{display: 'none'}}/>
                     <label htmlFor="csharp"className="devicon-csharp-plain  text-lg" style={{cursor: 'pointer'}}>
                         <p className="logoFontSize">Csharp</p>
+                    </label>
+                    <input type="checkbox" value="php" onChange={props.onChangeLang} name="php" id="php" style={{display: 'none'}}/>
+                    <label htmlFor="php" className="devicon-php-plain  text-lg" style={{cursor: 'pointer'}}>
+                        <p className="logoFontSize">PHP</p>
+                    </label>
+                    <input type="checkbox" value="c++" onChange={props.onChangeLang} name="cplusplus" id="cplusplus" style={{display: 'none'}}/>
+                    <label htmlFor="cplusplus" className="devicon-cplusplus-plain  text-lg" style={{cursor: 'pointer'}}>
+                        <p className="logoFontSize">C++</p>
+                    </label>
+                    <input type="checkbox" value="ruby" onChange={props.onChangeLang} name="ruby" id="ruby" style={{display: 'none'}}/>
+                    <label htmlFor="ruby" className="devicon-ruby-plain text-lg" style={{cursor: 'pointer'}}>
+                        <p className="logoFontSize">Ruby</p>
                     </label>
                     <input type="checkbox" value="java" onChange={props.onChangeLang} name="java" id="java" style={{display: 'none'}}/>
                     <label htmlFor="java" className="devicon-java-plain  text-lg" style={{cursor: 'pointer'}} >
@@ -29,10 +45,9 @@ function Languagesearch(props) {
                     <label htmlFor="python" className="devicon-python-plain  text-lg" style={{cursor: 'pointer'}}>
                         <p className="logoFontSize">Python</p>
                     </label>
-
-                    <input type="checkbox" value="php" onChange={props.onChangeLang} name="php" id="php" style={{display: 'none'}}/>
-                    <label htmlFor="php" className="devicon-php-plain  text-lg" style={{cursor: 'pointer'}}>
-                        <p className="logoFontSize">PHP</p>
+                    <input type="checkbox" value="go" onChange={props.onChangeLang} name="go" id="go" style={{display: 'none'}}/>
+                    <label htmlFor="go" className="devicon-go-plain  text-lg" style={{cursor: 'pointer'}}>
+                        <p className="logoFontSize">Go</p>
                     </label>
                 </span>
             </span>
@@ -41,7 +56,8 @@ function Languagesearch(props) {
 }
 
 const boxStyle = {
-    paddingTop: '.5rem',
+    padding: '1.5rem 0',
+    // paddingTop: '.5rem',
     width: '65%',
     display: 'flex',
     justifyContent: 'space-between',
@@ -49,6 +65,8 @@ const boxStyle = {
     textAlign: 'center',
     margin: 'auto'
 }
+
+
 
 export default Languagesearch
 
