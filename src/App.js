@@ -18,7 +18,7 @@ function App(props) {
 const searchRegion = async (langList, frameList, region) => {
 
     if(tatOrter.includes(region) || region === '') {
-            const res = await axios.get(`https://api.github.com/search/users?q=language:${langList && frameList ? `${langList}+${frameList}` : langList}+location:${region ? region : 'sweden'}&client_id=${process.env.REACT_APP_GH_CID}&client_secret=${process.env.REACT_APP_GH_CSC}`)
+            const res = await axios.get(`https://api.github.com/search/users?q=language:${langList || frameList ? `${langList}+${frameList}` : langList}+location:${region ? region : 'sweden'}&client_id=${process.env.REACT_APP_GH_CID}&client_secret=${process.env.REACT_APP_GH_CSC}`)
             setProfiles(res.data.items);
             console.log(res.data.items)
         } 

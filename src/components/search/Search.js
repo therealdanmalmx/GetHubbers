@@ -99,11 +99,12 @@ function Search(props) {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        if (!langCheck) { 
-            props.showAlert('Välj minst ett programmeringspråk');
+        if (!langCheck && !frameCheck) { 
+            props.showAlert('Välj minst ett programmeringspråk och / eller ramverk');
         } else if (region && !tatOrter.includes(region)) {
             props.showAlert(`${region} är inte en av Sveriges 20 största städer. Eller så är det misstavat.`);
-        } else {
+        } 
+        else {
             props.searchRegion(langList.join('+'), frameList.join('+'), region);
             history.push('/profiles')
         }
