@@ -48,6 +48,9 @@ function Search(props) {
                 case "ruby": 
                     langList.splice("ruby", 1)
                     break;
+                case "swift": 
+                    langList.splice("swift", 1)
+                    break;
             
                 default:
                     break;
@@ -104,6 +107,9 @@ function Search(props) {
         } else if (region && !tatOrter.includes(region)) {
             props.showAlert(`${region} är inte en av Sveriges 20 största städer. Eller så är det misstavat.`);
         } 
+        // else if(!res) {
+        //     props.showAlert('Hittade inga profiler, Gör ett nytt val');
+        // }
         else {
             props.searchRegion(langList.join('+'), frameList.join('+'), region);
             history.push('/profiles')

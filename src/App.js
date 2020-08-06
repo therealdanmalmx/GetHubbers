@@ -18,9 +18,14 @@ function App(props) {
 const searchRegion = async (langList, frameList, region) => {
 
     if(tatOrter.includes(region) || region === '') {
-            const res = await axios.get(`https://api.github.com/search/users?q=language:${langList || frameList ? `${langList}+${frameList}` : langList}+location:${region ? region : 'sweden'}&client_id=${process.env.REACT_APP_GH_CID}&client_secret=${process.env.REACT_APP_GH_CSC}`)
-            setProfiles(res.data.items);
-            console.log(res.data.items)
+        const res = await axios.get(`https://api.github.com/search/users?q=language:${langList && frameList ? `${langList}+${frameList}` : langList ? `${langList}` : frameList ? `${frameList}` : `${langList}+${frameList}`}+location:${region ? region : 'sweden'}&client_id=${process.env.REACT_APP_GH_CID}&client_secret=${process.env.REACT_APP_GH_CSC}`)
+            if(!res) {
+                setAlert('No good');              
+
+            } else {
+                setProfiles(res.data.items);
+                console.log(res.data.items)
+            }
         } 
 }
 
@@ -31,13 +36,12 @@ const getProfile = async (login) => {
 
 const showAlert = (msg) => {
     setAlert({msg});
-    setTimeout(() => [setAlert(null), window.location.reload()], 10000);
+    setTimeout(() => [setAlert(null)], 10000);
     
 }
 
 const closeAlert = () => {
     setAlert(null);
-    window.location.reload();
 }
 
     return ( 

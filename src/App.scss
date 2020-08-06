@@ -142,6 +142,7 @@ a:hover {
     width: 40%;
     padding: 1.5rem;
     font-size: 1rem;
+    outline: none;
     /* border: none; */
 }
 
@@ -157,7 +158,7 @@ a:hover {
 
 .sideBox {
     font-weight: bold;
-    padding: 2rem .5rem;
+    padding: 2.2rem .5rem;
     margin: auto;
     float: left;
     height: 100%;
@@ -174,8 +175,11 @@ input[type="checkbox"] {
     -webkit-appearance: none;
 }
 
+label {
+    border-bottom: 5px solid transparent;
+}
 :checked + label {
-    border-bottom: 2px solid #52BE80;
+    border-bottom: 5px solid #52BE80;
 }
 
 .text-lg {
@@ -195,7 +199,9 @@ input[type="checkbox"] {
 }
 
 .logoFontSize {
+    margin: .3rem 0;
     font-size: 1rem;
+
 }
 
 /* Buttons */
@@ -266,7 +272,8 @@ input[type="checkbox"] {
     position: relative;
     top: 93px;
     width: 100%;
-    padding: 0.5rem;
+    padding: 1.5rem 0.5rem;
+    opacity: 0.9;
     font-size: 1rem;
     background-color: red;
     color: white;
