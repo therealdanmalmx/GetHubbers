@@ -16,7 +16,7 @@ function Languagesearch(props) {
                     <label htmlFor="c" className="devicon-c-plain  text-lg" style={{cursor: 'pointer'}} >
                         <p className="logoFontSize">C</p>
                     </label>
-                    <input type="checkbox" value="c++" onChange={props.onChangeLang} name="cplusplus" id="cplusplus" style={{display: 'none'}}/>
+                    <input type="checkbox" value="c++" onChange={props.onChangeLang} name="c++" id="cplusplus" style={{display: 'none'}}/>
                     <label htmlFor="cplusplus" className="devicon-cplusplus-plain  text-lg" style={{cursor: 'pointer'}}>
                         <p className="logoFontSize">C++</p>
                     </label>

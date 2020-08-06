@@ -39,7 +39,7 @@ function FrameworkSearch(props) {
                     <label htmlFor="rails" className="devicon-rails-plain text-lg" style={{cursor: 'pointer'}} >
                     <p className="logoFontSize">Rails</p>
                 </label>
-                <input type="checkbox" value='react' onChange={props.onChangeFrame} name='react' id="react" style={{display: 'none'}}/>
+                <input type="checkbox" value='react' onChange={props.onChangeFrame} name='React' id="react" style={{display: 'none'}}/>
                 <label htmlFor="react" className="devicon-react-original text-lg" style={{cursor: 'pointer'}} >
                     <p className="logoFontSize">React</p>
                 </label>
