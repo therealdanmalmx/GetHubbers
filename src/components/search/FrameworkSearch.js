@@ -45,7 +45,7 @@ function FrameworkSearch(props) {
                 </label>
                 <input type="checkbox" value='spring' onChange={props.onChangeFrame} name="spring" id="spring" style={{display: 'none'}}/>
                 <label htmlFor="spring" style={{cursor: 'pointer'}} >
-                        <img src={require('../../assets/SpringLogo.png')} alt="Logo for the Spring framework" style="height: 30px;"/>
+                        <img src={require('../../assets/SpringLogo.png')} alt="Logo for the Spring framework"/>
                     <p className="logoFontSize">Spring</p>
                 </label>
                 <input type="checkbox" value='vue' onChange={props.onChangeFrame} name="vue" id="vue" style={{display: 'none'}}/>
