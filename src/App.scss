@@ -134,8 +134,8 @@ a:hover {
     margin: auto;
     text-align: center;
     position: absolute;
-    top: 40%;
-    transform: translateY(-40%);
+    top: 45%;
+    transform: translateY(-45%);
 }
 
 .searchBox {
@@ -190,7 +190,7 @@ label {
     display:grid;
     grid-template-columns: repeat(2, 1fr);
     justify-content: space-between;
-    height: 5.5vh;
+    height: 7.5vh;
 }
 
 .logoFontSize {
