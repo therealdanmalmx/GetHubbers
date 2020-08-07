@@ -19,13 +19,19 @@ function Search(props) {
         console.log(langCheck.checked)
         if(langCheck.checked) {
             setLangCheck(langList.push(e.target.name));
-        } else if(langCheck.checked === false) {
+        } else if(!langCheck.checked) {
             switch (e.target.name) {
+                case "c": 
+                    langList.splice("c", 1)
+                    break;
                 case "javascript": 
                     langList.splice("javascript", 1)
                     break;
                 case "csharp": 
                     langList.splice("csharp", 1)
+                    break;
+                case "c++": 
+                    langList.splice("c++", 1)
                     break;
                 case "java": 
                     langList.splice("java", 1)
@@ -35,6 +41,18 @@ function Search(props) {
                     break;
                 case "php": 
                     langList.splice("php", 1)
+                    break;
+                case "go": 
+                    langList.splice("go", 1)
+                    break;
+                case "kotlin": 
+                    langList.splice("kotlin", 1)
+                    break;
+                case "ruby": 
+                    langList.splice("ruby", 1)
+                    break;
+                case "swift": 
+                    langList.splice("swift", 1)
                     break;
             
                 default:
@@ -48,7 +66,7 @@ function Search(props) {
         console.log(frameCheck.checked)
         if(frameCheck.checked) {
             setFrameCheck(frameList.push(e.target.name));
-        }  else if(frameCheck.checked === false) {
+        }  else if(!frameCheck.checked) {
             switch (e.target.name) {
                 case "angular": 
                     langList.splice("angular", 1)
@@ -56,14 +74,26 @@ function Search(props) {
                 case "react": 
                     langList.splice("react", 1)
                     break;
-                case "dotnet": 
-                    langList.splice("dotnet", 1)
+                case "vue": 
+                    langList.splice("vue", 1)
+                    break;
+                case "express": 
+                    langList.splice("express", 1)
+                    break;
+                case "asp": 
+                    langList.splice("asp", 1)
                     break;
                 case "laravel": 
                     langList.splice("laravel", 1)
                     break;
                 case "django": 
                     langList.splice("django", 1)
+                    break;
+                case "rails": 
+                    langList.splice("rails", 1)
+                    break;
+                case "springs": 
+                    langList.splice("springs", 1)
                     break;
             
                 default:
@@ -78,11 +108,15 @@ function Search(props) {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        if (!langCheck) { 
-            props.showAlert('Välj minst ett programmeringspråk');
+        if (!langCheck && !frameCheck) { 
+            props.showAlert('Välj minst ett programmeringspråk och / eller ramverk');
         } else if (region && !tatOrter.includes(region)) {
             props.showAlert(`${region} är inte en av Sveriges 20 största städer. Eller så är det misstavat.`);
-        } else {
+        } 
+        // else if(!res) {
+        //     props.showAlert('Hittade inga profiler, Gör ett nytt val');
+        // }
+        else {
             props.searchRegion(langList.join('+'), frameList.join('+'), region);
             history.push('/profiles')
         }
