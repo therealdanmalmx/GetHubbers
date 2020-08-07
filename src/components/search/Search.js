@@ -19,7 +19,7 @@ function Search(props) {
         console.log(langCheck.checked)
         if(langCheck.checked) {
             setLangCheck(langList.push(e.target.name));
-        } else if(langCheck.checked === false) {
+        } else if(!langCheck.checked) {
             switch (e.target.name) {
                 case "c": 
                     langList.splice("c", 1)
@@ -30,8 +30,8 @@ function Search(props) {
                 case "csharp": 
                     langList.splice("csharp", 1)
                     break;
-                case "cplusplus": 
-                    langList.splice("cplusplus", 1)
+                case "c++": 
+                    langList.splice("c++", 1)
                     break;
                 case "java": 
                     langList.splice("java", 1)
@@ -44,6 +44,9 @@ function Search(props) {
                     break;
                 case "go": 
                     langList.splice("go", 1)
+                    break;
+                case "kotlin": 
+                    langList.splice("kotlin", 1)
                     break;
                 case "ruby": 
                     langList.splice("ruby", 1)
@@ -63,7 +66,7 @@ function Search(props) {
         console.log(frameCheck.checked)
         if(frameCheck.checked) {
             setFrameCheck(frameList.push(e.target.name));
-        }  else if(frameCheck.checked === false) {
+        }  else if(!frameCheck.checked) {
             switch (e.target.name) {
                 case "angular": 
                     langList.splice("angular", 1)
@@ -77,8 +80,8 @@ function Search(props) {
                 case "express": 
                     langList.splice("express", 1)
                     break;
-                case "dotnet": 
-                    langList.splice("dotnet", 1)
+                case "asp": 
+                    langList.splice("asp", 1)
                     break;
                 case "laravel": 
                     langList.splice("laravel", 1)
@@ -88,6 +91,9 @@ function Search(props) {
                     break;
                 case "rails": 
                     langList.splice("rails", 1)
+                    break;
+                case "springs": 
+                    langList.splice("springs", 1)
                     break;
             
                 default:

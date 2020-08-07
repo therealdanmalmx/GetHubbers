@@ -21,7 +21,7 @@ function Profiles(props) {
 
 const profileStyle = {
     position: 'relative',
-    top: '7rem',
+    top: '8rem',
     width: '100%',
     display: 'grid', 
     gridTemplateColumns: 'repeat(3, 1fr)',
