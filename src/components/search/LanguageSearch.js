@@ -37,15 +37,15 @@ function Languagesearch(props) {
                 </label>
                 <input type="checkbox" value="kotlin" onChange={props.onChangeLang} name="kotlin" id="kotlin" style={{display: 'none'}}/>
                 <label htmlFor="kotlin" style={{cursor: 'pointer'}}>
-                    <img src={require('../../assets/Kotlin.png')} alt="Logo for the Kotlin language"/>
-                    <p className="logoFontSize">Kotlin</p>
+                    <img src={require('../../assets/Kotlin.png')} alt="Logo for the Kotlin language" style={{height:' 30px'}}/>
+                    <p style={{ margin: '.05rem 0', fontSize: '1rem', opacity: '0.7' }}>Kotlin</p>
                 </label>
                 <input type="checkbox" value="php" onChange={props.onChangeLang} name="php" id="php" style={{display: 'none'}}/>
-                <label htmlFor="php" className="devicon-php-plain  text-lg" style={{cursor: 'pointer'}}>
+                <label htmlFor="php" className="devicon-php-plain text-lg" style={{cursor: 'pointer'}}>
                     <p className="logoFontSize">PHP</p>
                 </label>
                 <input type="checkbox" value="python" onChange={props.onChangeLang} name="python" id="python" style={{display: 'none'}}/>
-                <label htmlFor="python" className="devicon-python-plain  text-lg" style={{cursor: 'pointer'}}>
+                <label htmlFor="python" className="devicon-python-plain text-lg" style={{cursor: 'pointer'}}>
                     <p className="logoFontSize">Python</p>
                 </label>
                 <input type="checkbox" value="ruby" onChange={props.onChangeLang} name="ruby" id="ruby" style={{display: 'none'}}/>
