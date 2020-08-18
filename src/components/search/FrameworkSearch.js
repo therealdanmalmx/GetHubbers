@@ -43,7 +43,7 @@ function FrameworkSearch(props) {
                 <label htmlFor="react" className="devicon-react-original text-lg" style={{cursor: 'pointer'}} >
                     <p className="logoFontSize">React</p>
                 </label>
-                <input type="checkbox" value='spring' onChange={props.onChangeFrame} name="spring" id="spring" style={{display: 'none'}}/>
+                <input type="checkbox" value='spring' onChange={props.onChangeFrame} name="spring boot" id="spring" style={{display: 'none'}}/>
                 <label htmlFor="spring" style={{cursor: 'pointer'}} >
                     <img src={require('../../assets/SpringLogo.png')} alt="Logo for the Spring framework" style={{height: '30px'}}/>
                     <p style={{ margin: '.05rem 0', fontSize: '1rem', opacity: '0.7' }}>Spring</p>
