@@ -13,7 +13,7 @@ function Profile(props) {
             <Link to="/profiles"><i className="fas fa-arrow-circle-left backBtn"></i></Link>
         <div class="frame">
             <div class="picture">
-                <img src={avatar_url} alt=""/>
+                <img src={avatar_url} alt="github profile picture"/>
             </div>
             <div style={profileStyle}>
                 {name}
