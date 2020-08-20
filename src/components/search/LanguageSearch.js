@@ -16,10 +16,10 @@ function Languagesearch(props) {
                     <p className="logoFontSize">C</p>
                 </label>
                 <input type="checkbox" value="c++" onChange={props.onChangeLang} name="c++" id="c++" style={{display: 'none'}}/>
-                <label htmlFor="c++" className="devicon-cplusplus-plain  text-lg" style={{cursor: 'pointer'}}>
+                <label htmlFor="c++" className="devicon-cplusplus-plain text-lg" style={{cursor: 'pointer'}}>
                     <p className="logoFontSize">C++</p>
                 </label>
-                <input type="checkbox" value="c#" onChange={props.onChangeLang} name="c#" id="csharp" style={{display: 'none'}}/>
+                <input type="checkbox" value="c#" onChange={props.onChangeLang} name="csharp" id="csharp" style={{display: 'none'}}/>
                 <label htmlFor="csharp"className="devicon-csharp-plain  text-lg" style={{cursor: 'pointer'}}>
                     <p className="logoFontSize">C#</p>
                 </label>
