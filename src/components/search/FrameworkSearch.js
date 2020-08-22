@@ -14,7 +14,7 @@ function FrameworkSearch(props) {
                 <label htmlFor="angular" className="devicon-angularjs-plain text-lg" style={{cursor: 'pointer', hover:'JavaScript'}}>
                     <p className="logoFontSize">Angular</p>
                 </label>
-                    <input type="checkbox" value='django' onChange={props.onChangeFrame} name="python, django" id="django" style={{display: 'none'}}/>
+                    <input type="checkbox" value='django' onChange={props.onChangeFrame} name="django" id="django" style={{display: 'none'}}/>
                     <label htmlFor="django" className="devicon-django-plain text-lg" style={{cursor: 'pointer'}} >
                     <p className="logoFontSize">Django</p>
                 </label>
@@ -22,7 +22,7 @@ function FrameworkSearch(props) {
                     <label htmlFor="electron" className="devicon-electron-plain text-lg" style={{cursor: 'pointer'}} >
                     <p className="logoFontSize">Electron</p>
                 </label> */}
-                <input type="checkbox" value='express' onChange={props.onChangeFrame} name="express, node" id="express" style={{display: 'none'}}/>
+                <input type="checkbox" value='express' onChange={props.onChangeFrame} name="express node" id="express" style={{display: 'none'}}/>
                     <label htmlFor="express" className="devicon-express-original text-lg" style={{cursor: 'pointer'}} >
                     <p className="logoFontSize">Express</p>
                 </label>
@@ -42,7 +42,7 @@ function FrameworkSearch(props) {
                 <label htmlFor="react" className="devicon-react-original text-lg" style={{cursor: 'pointer'}} >
                     <p className="logoFontSize">React</p>
                 </label>
-                <input type="checkbox" value='spring' onChange={props.onChangeFrame} name="java spring" id="spring" style={{display: 'none'}}/>
+                <input type="checkbox" value='spring' onChange={props.onChangeFrame} name="spring boot" id="spring" style={{display: 'none'}}/>
                 <label htmlFor="spring" style={{cursor: 'pointer'}} >
                     <img src={require('../../assets/SpringLogo.png')} alt="Logo for the Spring framework" style={{height: '30px'}}/>
                     <p style={{ margin: '.05rem 0', fontSize: '1rem', opacity: '0.7' }}>Spring</p>

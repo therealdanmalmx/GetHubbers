@@ -12,8 +12,8 @@ function Profile(props) {
 
         <Fragment>
             <Link to="/profiles"><i className="fas fa-arrow-circle-left backBtn"></i></Link>
-        <div class="frame">
-            <div class="picture">
+        <div className="frame">
+            <div className="picture">
                 <img src={avatar_url} alt="github avatar"/>
             </div>
             <div style={profileStyle}>
@@ -22,7 +22,7 @@ function Profile(props) {
                 {hireable === true ? <div style={hireableStyle}></div> : null}
             <div style={gitHubStyle}>
                 <a href={html_url} target="_blank" rel="noopener noreferrer" style={{color: '#F1C40F'}} className="github">               
-                    <i class="fab fa-github"></i>
+                    <i className="fab fa-github"></i>
                 </a>
             </div>
             <div style={locationStyle}>
@@ -38,12 +38,12 @@ function Profile(props) {
                     <strong>Jobbar på: </strong> {company}
                 </div> }
                 {blog && <div style={blogStyle}>
-                    <a href={blog} target="_blank" rel="noopener noreferrer" style={{color: '#1B4F72'}}><i class="fab fa-chrome"></i></a>
+                    <a href={blog} target="_blank" rel="noopener noreferrer" style={{color: '#1B4F72'}}><i className="fab fa-chrome"></i></a>
                 {email && <div style={emailStyle}>
                     <strong>Email: </strong> {email}
                 </div> }
                 </div> }
-            </div> }
+            </div>
         </div>
         </Fragment>
     )
@@ -56,8 +56,6 @@ const profileStyle = {
     left: '600px',
     color: '#D7DBDD',
     fontSize: '5rem',
-
-    
 }
 
 const hireableStyle = {
