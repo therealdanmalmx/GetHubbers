@@ -19,12 +19,14 @@ function Search(props) {
         langCheck = e.target;
         if(langCheck.checked && !langList.includes(e.target.name)) {
             setLangCheck(langList.push(e.target.name));
-            console.log(langList)
+            console.log(langList);
         } else if(!langCheck.checked) {
+            console.log(langList);
             switch (e.target.name) {
                 case e.target.name: 
                     const removeLang = langList.indexOf(e.target.name)
                     langList.splice(removeLang, 1)
+                    console.log(langList);
                     break;
             
                 default:
@@ -37,12 +39,13 @@ function Search(props) {
         frameCheck = e.target;
         if(frameCheck.checked && !frameList.includes(e.target.name)) {
             setFrameCheck(frameList.push(e.target.name));
-            console.log(frameList)
+            console.log(frameList);
         }  else if(!frameCheck.checked) {
             switch (e.target.name) {
                 case e.target.name: 
                     const removeFrame = frameList.indexOf(e.target.name)
                     frameList.splice(removeFrame, 1)
+                    console.log(frameList);
                     break;
             
                 default:
@@ -57,7 +60,7 @@ function Search(props) {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        if (!langCheck && !frameCheck) { 
+        if (!langCheck && !frameCheck || langList === undefined && frameList === undefined || langList.length === 0 && frameList.length === 0 ) { 
             props.showAlert('Välj minst ett programmeringspråk och / eller ramverk');
         } else if (region && !tatOrter.includes(region)) {
             props.showAlert(`${region} är inte en av Sveriges 20 största städer. Eller så är det misstavat.`);
