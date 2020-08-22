@@ -1,25 +1,24 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 function Languagesearch(props) {
 
     return (
-        <span  className="langCheck">
+        <span>
             <span className="sideBox">
-                {/* <input type="text" id="lang" style={{display: 'none'}}/> */}
+                <input type="text" id="lang" style={{display: 'none'}}/>
                 <label htmlFor="lang">Språk
                 </label>
             </span>
-            <span style={boxStyle}>
+            <span className='logoStyle'>
                 <input type="checkbox" value="c" onChange={props.onChangeLang} name="c" id="c" style={{display: 'none'}}/>
                 <label htmlFor="c" className="devicon-c-plain  text-lg" style={{cursor: 'pointer'}} >
                     <p className="logoFontSize">C</p>
                 </label>
                 <input type="checkbox" value="c++" onChange={props.onChangeLang} name="c++" id="c++" style={{display: 'none'}}/>
-                <label htmlFor="c++" className="devicon-cplusplus-plain  text-lg" style={{cursor: 'pointer'}}>
+                <label htmlFor="c++" className="devicon-cplusplus-plain text-lg" style={{cursor: 'pointer'}}>
                     <p className="logoFontSize">C++</p>
                 </label>
-                <input type="checkbox" value="c#" onChange={props.onChangeLang} name="c#" id="csharp" style={{display: 'none'}}/>
+                <input type="checkbox" value="c#" onChange={props.onChangeLang} name="csharp" id="csharp" style={{display: 'none'}}/>
                 <label htmlFor="csharp"className="devicon-csharp-plain  text-lg" style={{cursor: 'pointer'}}>
                     <p className="logoFontSize">C#</p>
                 </label>
@@ -61,17 +60,17 @@ function Languagesearch(props) {
     )
 }
 
-const boxStyle = {
-    padding: '.8rem 0',
-    // paddingTop: '.5rem',
-    width: '80%',
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'flex-start',
-    textAlign: 'center',
-    margin: 'auto',
+// const boxStyle = {
+//     padding: '.8rem 0',
+//     // paddingTop: '.5rem',
+//     width: '80%',
+//     display: 'flex',
+//     justifyContent: 'space-between',
+//     alignItems: 'flex-start',
+//     textAlign: 'center',
+//     margin: 'auto',
 
-}
+// }
 
 
 

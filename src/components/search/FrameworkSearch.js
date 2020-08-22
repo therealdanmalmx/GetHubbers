@@ -3,15 +3,14 @@ import React from 'react'
 function FrameworkSearch(props) {
 
     return (
-    <span  className="langCheck">
         <span>
             <span className="sideBox">
                 <input type="text" id="lang" style={{display: 'none'}}/>
                 <label htmlFor="lang">Ramverk
                 </label>
             </span>
-            <span style={boxStyle}>
-            <input type="checkbox" value='angular' onChange={props.onChangeFrame} name="angular js" id="angular" style={{display: 'none'}}/>
+            <span className='logoStyle'>
+                <input type="checkbox" value='angular' onChange={props.onChangeFrame} name="angular js" id="angular" style={{display: 'none'}}/>
                 <label htmlFor="angular" className="devicon-angularjs-plain text-lg" style={{cursor: 'pointer', hover:'JavaScript'}}>
                     <p className="logoFontSize">Angular</p>
                 </label>
@@ -43,7 +42,7 @@ function FrameworkSearch(props) {
                 <label htmlFor="react" className="devicon-react-original text-lg" style={{cursor: 'pointer'}} >
                     <p className="logoFontSize">React</p>
                 </label>
-                <input type="checkbox" value='spring' onChange={props.onChangeFrame} name="spring" id="spring" style={{display: 'none'}}/>
+                <input type="checkbox" value='spring' onChange={props.onChangeFrame} name="java spring" id="spring" style={{display: 'none'}}/>
                 <label htmlFor="spring" style={{cursor: 'pointer'}} >
                     <img src={require('../../assets/SpringLogo.png')} alt="Logo for the Spring framework" style={{height: '30px'}}/>
                     <p style={{ margin: '.05rem 0', fontSize: '1rem', opacity: '0.7' }}>Spring</p>
@@ -54,18 +53,17 @@ function FrameworkSearch(props) {
                 </label>
             </span>
         </span>
-    </span>
     )
 }
 
-const boxStyle = {
-    padding: '.8rem 0',
-    width: '80%',
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'flex-start',
-    textAlign: 'center',
-    margin: 'auto'
-}
+// const boxStyle = {
+//     padding: '1rem 0',
+//     width: '80%',
+//     display: 'flex',
+//     justifyContent: 'space-between',
+//     alignItems: 'flex-start',
+//     textAlign: 'center',
+//     margin: 'auto'
+// }
 
 export default FrameworkSearch
