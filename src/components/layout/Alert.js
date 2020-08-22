@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 function Alert(props) {
 
@@ -24,10 +23,6 @@ function Alert(props) {
 const alertStyle = {
     display: 'flex',
     justifyContent: 'space-between'
-}
-
-Alert.propTypes = {
-
 }
 
 export default Alert
