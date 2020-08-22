@@ -26,12 +26,9 @@ $transition:all 600ms cubic-bezier(0.075, 0.82, 0.165, 1);
 /* GENERAL STYLE */
 body {
     padding: 0;
-    background-image: url('./assets/coder.jpg');
-    background-repeat: no-repeat;
+    background: url('./assets/coder.jpg') no-repeat center center fixed;
     background-size: cover;
     font-family: 'Roboto', sans-serif;
-	height:100vh;
-    background-color:$body;
     
     /* INDIVIDUAL PROFILE */
 
@@ -241,6 +238,68 @@ label {
     border: none;
 }
 
+/* ALERT */
+
+.alert {
+    position: relative;
+    top: 100px;
+    width: 100%;
+    padding: 1.5rem 0.5rem;
+    opacity: 0.9;
+    font-size: 1rem;
+    background-color: red;
+    color: white;
+}
+
+/* PROFILE */
+
+.card {
+    position: relative;
+    height: auto;
+    margin-top: 1rem;;
+    // width: 23vw;
+    // height: 9.4vh;
+    // border: 2px solid #D7DBDD;
+    // background-color: #273746;
+    // border-radius: 100px;
+    
+}
+.loginStyle {
+    position: absolute;
+    top: 6.4%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    text-shadow: 2px 2px 10px #D7DBDD;
+    color: #282828; 
+    font-size: 2rem; 
+    background-color: #D7DBDD;
+    padding: .5rem 0;
+    opacity: .8;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.sideCard {
+    height: 35vh; 
+    border-radius: 10px;
+    // overflow-y: scroll;
+}
+
+.hireable {
+    margin-top: 4rem;
+    width: 25%;
+    border-radius: 40px;
+    margin: auto;
+    padding: .8rem 0;
+    background-color: green;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+
 .profileBtn {
     position: absolute;
     top: 350px;
@@ -264,48 +323,23 @@ label {
     border: none;
 }
 
-/* ALERT */
-
-.alert {
-    position: relative;
-    top: 100px;
-    width: 100%;
-    padding: 1.5rem 0.5rem;
-    opacity: 0.9;
-    font-size: 1rem;
-    background-color: red;
-    color: white;
+@media (min-width: 1920px) and (max-width: 2047px) {
+    .profileBtn {
+        top: 305px;
+        left: 290px;
+    }
+    .loginStyle {
+        top: 7.6%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 89%;
+    }
 }
 
-/* CARD */
-
-.card {
-    position: relative;
-    height: auto;
-    // width: 23vw;
-    // height: 9.4vh;
-    // border: 2px solid #D7DBDD;
-    // background-color: #273746;
-    // border-radius: 100px;
+@media (min-width: 2048px) {
+    .profileBtn {
+        top: 370px;
+        left: 335px;
+    }
+    
 }
-
-.sideCard {
-    height: 35vh; 
-    border-radius: 10px;
-    overflow-y: scroll;
-}
-
-.hireable {
-    margin-top: 4rem;
-    width: 25%;
-    border-radius: 40px;
-    margin: auto;
-    padding: .8rem 0;
-    background-color: green;
-    color: white;
-    text-align: center;
-    font-weight: bold;
-}
-
-// PROFILE
-

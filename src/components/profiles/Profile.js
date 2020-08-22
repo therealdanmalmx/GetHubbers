@@ -1,6 +1,7 @@
 import React, {useEffect, Fragment} from 'react'
 import { Link } from "react-router-dom";
 
+
 function Profile(props) {
     useEffect(() => {
         props.getProfile(props.match.params.login)
@@ -13,7 +14,7 @@ function Profile(props) {
             <Link to="/profiles"><i className="fas fa-arrow-circle-left backBtn"></i></Link>
         <div class="frame">
             <div class="picture">
-                <img src={avatar_url} alt="github profile picture"/>
+                <img src={avatar_url} alt="github avatar"/>
             </div>
             <div style={profileStyle}>
                 {name}
