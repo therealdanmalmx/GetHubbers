@@ -125,7 +125,7 @@ function Search(props) {
     return (
         <div>
             <form onSubmit={onSubmit}>
-                <div className="choiceChange">
+                <div className="searchBar">
                 <LangSearch onChangeLang={onChangeLang} />
                 <FrameSearch onChangeFrame={onChangeFrame} />
                 </div>

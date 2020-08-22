@@ -1,16 +1,15 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 function Languagesearch(props) {
 
     return (
-        <span  className="langCheck">
+        <span>
             <span className="sideBox">
-                {/* <input type="text" id="lang" style={{display: 'none'}}/> */}
+                <input type="text" id="lang" style={{display: 'none'}}/>
                 <label htmlFor="lang">Språk
                 </label>
             </span>
-            <span style={boxStyle}>
+            <span className='logoStyle'>
                 <input type="checkbox" value="c" onChange={props.onChangeLang} name="c" id="c" style={{display: 'none'}}/>
                 <label htmlFor="c" className="devicon-c-plain  text-lg" style={{cursor: 'pointer'}} >
                     <p className="logoFontSize">C</p>
@@ -61,17 +60,17 @@ function Languagesearch(props) {
     )
 }
 
-const boxStyle = {
-    padding: '.8rem 0',
-    // paddingTop: '.5rem',
-    width: '80%',
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'flex-start',
-    textAlign: 'center',
-    margin: 'auto',
+// const boxStyle = {
+//     padding: '.8rem 0',
+//     // paddingTop: '.5rem',
+//     width: '80%',
+//     display: 'flex',
+//     justifyContent: 'space-between',
+//     alignItems: 'flex-start',
+//     textAlign: 'center',
+//     margin: 'auto',
 
-}
+// }
 
 
 

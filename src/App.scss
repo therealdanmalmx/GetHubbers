@@ -29,6 +29,7 @@ body {
     background: url('./assets/coder.jpg') no-repeat center center fixed;
     background-size: cover;
     font-family: 'Roboto', sans-serif;
+    overflow-Y: scroll;
     
     /* INDIVIDUAL PROFILE */
 
@@ -122,7 +123,7 @@ a:hover {
     text-align: center;
 }
 
-/* SEARCH */
+/* SEARCH BOX */
 
 .search {
     display: inline-block;
@@ -140,10 +141,19 @@ a:hover {
     padding: 1.5rem;
     font-size: 1rem;
     outline: none;
-    /* border: none; */
 }
 
-.langCheck {
+// SEARCH-BAR
+
+.searchBar {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    top: 120px;
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+    height: 7.5vh;
     background-color: #F2F4F4;
     opacity: .9;
 }
@@ -158,6 +168,16 @@ a:hover {
     background-color: #E4E6E8;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
+}
+
+.logoStyle {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: center;
+    padding: .8rem 0;
+    width: 80%;
+    margin: auto;
 }
 
 /* SEARCH ICONS*/
@@ -177,17 +197,6 @@ label {
 .text-lg {
     font-size: 2rem;
     color: #566573;
-}
-
-.choiceChange {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    top: 120px;
-    display:grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-content: space-between;
-    height: 7.5vh;
 }
 
 .logoFontSize {
@@ -242,7 +251,7 @@ label {
 
 .alert {
     position: relative;
-    top: 100px;
+    top: 10px;
     width: 100%;
     padding: 1.5rem 0.5rem;
     opacity: 0.9;
@@ -256,12 +265,7 @@ label {
 .card {
     position: relative;
     height: auto;
-    margin-top: 1rem;;
-    // width: 23vw;
-    // height: 9.4vh;
-    // border: 2px solid #D7DBDD;
-    // background-color: #273746;
-    // border-radius: 100px;
+    margin-top: 1rem;
     
 }
 .loginStyle {
@@ -304,7 +308,6 @@ label {
     position: absolute;
     top: 350px;
     left: 310px;
-    // margin: 2.5rem 1rem 0 0 ;
     padding: .5rem .8rem;
     font-size: .8rem;
     font-weight: bold;
@@ -323,6 +326,8 @@ label {
     border: none;
 }
 
+// MEDIA QUERIES 
+
 @media (min-width: 1920px) and (max-width: 2047px) {
     .profileBtn {
         top: 305px;
@@ -334,12 +339,20 @@ label {
         transform: translate(-50%,-50%);
         width: 89%;
     }
+
 }
 
 @media (min-width: 2048px) {
     .profileBtn {
         top: 370px;
         left: 335px;
+    }
+    .sideBox {
+        padding: 2.1rem .5rem;
+    
+    }
+    .logoStyle {
+        padding: 1.2rem 0;
     }
     
 }
