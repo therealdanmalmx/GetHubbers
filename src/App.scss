@@ -200,7 +200,7 @@ label {
 }
 
 .logoFontSize {
-    margin: .3rem 0;
+    margin: .4rem 0;
     font-size: 1rem;
 }
 
@@ -265,9 +265,19 @@ label {
 .card {
     position: relative;
     height: auto;
-    margin-top: 1rem;
-    
+    margin-top: 1rem;    
 }
+
+.profileStyle {
+    position: relative;
+    top: 8rem ;
+    width: 100% ;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: .8rem; 
+}
+
+
 .loginStyle {
     position: absolute;
     top: 6.4%;
@@ -328,31 +338,53 @@ label {
 
 // MEDIA QUERIES 
 
-@media (min-width: 1920px) and (max-width: 2047px) {
-    .profileBtn {
-        top: 305px;
-        left: 290px;
-    }
-    .loginStyle {
-        top: 7.6%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        width: 89%;
-    }
-
-}
+// Larger screens
 
 @media (min-width: 2048px) {
     .profileBtn {
-        top: 370px;
-        left: 335px;
+        top: 380px;
+        left: 340px;
     }
     .sideBox {
-        padding: 2.1rem .5rem;
+        padding: 2.3rem .5rem;
     
     }
     .logoStyle {
         padding: 1.2rem 0;
     }
+}
+
+// Laptops 
+
+@media (max-width: 1920px) {
+    .profileBtn {
+        top: 335px;
+        left: 300px;
+    }
+
+    .sideBox {
+        padding: 2.1rem .5rem;
     
+    }
+    .loginStyle {
+        top: 7.2%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 96%;
+    }
+}
+
+// Laptops 2
+
+@media (max-width: 1792px) {
+    .profileBtn {
+        top: 320px;
+        left: 300px;
+    }
+    .loginStyle {
+        top: 7.3%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 93%;
+    }
 }

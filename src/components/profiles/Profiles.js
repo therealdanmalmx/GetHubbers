@@ -8,7 +8,7 @@ function Profiles(props) {
         
         <div className="container">
             <Link to="/"><i className="fas fa-arrow-circle-left backBtn"></i></Link>
-            <div style={profileStyle}>
+            <div className = 'profileStyle'>
                 {props.profiles.map(profile => (
                     <ProfileItem key={profile.id} profile={profile} />
                 ))}

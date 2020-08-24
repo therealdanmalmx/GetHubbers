@@ -12,39 +12,39 @@ function Profile(props) {
 
         <Fragment>
             <Link to="/profiles"><i className="fas fa-arrow-circle-left backBtn"></i></Link>
-        <div className="frame">
-            <div className="picture">
-                <img src={avatar_url} alt="github avatar"/>
-            </div>
-            <div style={profileStyle}>
-                {name}
-            </div>
-                {hireable === true ? <div style={hireableStyle}></div> : null}
-            <div style={gitHubStyle}>
-                <a href={html_url} target="_blank" rel="noopener noreferrer" style={{color: '#F1C40F'}} className="github">               
-                    <i className="fab fa-github"></i>
-                </a>
-            </div>
-            <div style={locationStyle}>
-                {location}
-            </div >
-                {bio && (
-                    <div style={bioStyle}>
-                        <span>{bio}</span>
+                <div className="frame">
+                    <div className="picture">
+                        <img src={avatar_url} alt="github avatar"/>
                     </div>
-                )}
-            <div>
-                {company && <div style={companyStyle}>
-                    <strong>Jobbar på: </strong> {company}
-                </div> }
-                {blog && <div style={blogStyle}>
-                    <a href={blog} target="_blank" rel="noopener noreferrer" style={{color: '#1B4F72'}}><i className="fab fa-chrome"></i></a>
-                {email && <div style={emailStyle}>
-                    <strong>Email: </strong> {email}
-                </div> }
-                </div> }
-            </div>
-        </div>
+                    <div style={profileStyle}>
+                        {name}
+                    </div>
+                        {hireable === true ? <div style={hireableStyle}></div> : null}
+                    <div style={gitHubStyle}>
+                        <a href={html_url} target="_blank" rel="noopener noreferrer" style={{color: '#F1C40F'}} className="github">               
+                            <i className="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <div style={locationStyle}>
+                        {location}
+                    </div >
+                        {bio && (
+                            <div style={bioStyle}>
+                                <span>{bio}</span>
+                            </div>
+                        )}
+                    <div>
+                        {company && <div style={companyStyle}>
+                            <strong>Jobbar på: </strong> {company}
+                        </div> }
+                        {blog && <div style={blogStyle}>
+                            <a href={blog} target="_blank" rel="noopener noreferrer" style={{color: '#1B4F72'}}><i className="fab fa-chrome"></i></a>
+                        {email && <div style={emailStyle}>
+                            <strong>Email: </strong> {email}
+                        </div> }
+                        </div> }
+                    </div>
+                </div>
         </Fragment>
     )
 }
