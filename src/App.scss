@@ -175,7 +175,7 @@ a:hover {
     justify-content: space-between;
     align-items: flex-start;
     text-align: center;
-    padding: .6rem 0;
+    padding: .8rem 0;
     width: 80%;
     margin: auto;
 }
@@ -195,7 +195,7 @@ label {
 }
 
 .text-lg {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #566573;
 }
 
@@ -364,19 +364,19 @@ label {
 
 @media (max-width: 1920px) {
     .profileBtn {
-        top: 335px;
+        top: 300px;
         left: 300px;
     }
 
     .sideBox {
-        padding: 2.1rem .5rem;
+        padding: 1.7rem .5rem;
     
     }
     .loginStyle {
-        top: 7.2%;
+        top: 5%;
         left: 50%;
         transform: translate(-50%,-50%);
-        width: 96%;
+        width: 86.6%;
     }
 }
 
