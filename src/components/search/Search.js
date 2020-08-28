@@ -59,20 +59,18 @@ function Search(props) {
     }
 
     const onSubmit = (e) => {
+        console.log(e.target.value)
         e.preventDefault();
         if (!langCheck && !frameCheck || langList === undefined && frameList === undefined || langList.length === 0 && frameList.length === 0 ) { 
             props.showAlert('Välj minst ett programmeringspråk och / eller ramverk');
         } else if (region && !tatOrter.includes(region)) {
             props.showAlert(`${region} är inte en av Sveriges 20 största städer. Eller så är det felstavat.`);
-        } 
-        // else if(!res) {
-        //     props.showAlert('Hittade inga profiler, Gör ett nytt val');
-        // }
-        else {
+        }  else {
             props.searchRegion(langList.join('+'), frameList.join('+'), region);
             history.push('/profiles')
+        } 
+
         }
-    }
 
     return (
         <div>
