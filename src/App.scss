@@ -144,6 +144,11 @@ a:hover {
   outline: none;
 }
 
+.chooseCode {
+  font-size: 0.8rem;
+  margin: 0.8rem 0 0.4rem 0;
+}
+
 // SEARCH-BAR
 
 .searchBar {
@@ -152,9 +157,9 @@ a:hover {
   width: 100%;
   top: 120px;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   justify-content: space-between;
-  height: 7.5vh;
+  height: 10vh;
   background-color: #f2f4f4;
   opacity: 0.9;
 }
@@ -176,8 +181,8 @@ a:hover {
   justify-content: space-between;
   align-items: flex-start;
   text-align: center;
-  padding: 0.8rem 0;
-  width: 80%;
+  padding: 0.5rem 0;
+  width: 95%;
   margin: auto;
 }
 
@@ -204,7 +209,6 @@ label {
   margin: 0.4rem 0;
   font-size: 1rem;
 }
-
 /* BUTTONS */
 
 .btn {
