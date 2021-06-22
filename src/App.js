@@ -1,7 +1,7 @@
-import React, { useState, useEffect, Fragment } from 'react';
+import React, { useState, Fragment } from 'react';
 import './App.scss';
 import axios from 'axios';
-import { useHistory, BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Navbar from "./components/layout/Navbar";
 import Search from "./components/search/Search";
@@ -12,7 +12,7 @@ import tatOrter from '../src/tatOrter'
 
 
 
-function App(props) {
+function App() {
     const [alert, setAlert] = useState(null);
     const [profiles, setProfiles] = useState([]);
     const [profiler, setProfiler] = useState({});
@@ -29,9 +29,6 @@ function App(props) {
         }
     }
 
-
-
-
     const getProfile = async (login) => {
         const res = await axios.get(`https://api.github.com/users/${login}?client_id=${process.env.REACT_APP_GH_CID}&client_secret=${process.env.REACT_APP_GH_CSC}`)
         setProfiler(res.data);
@@ -47,14 +44,13 @@ function App(props) {
         setAlert(null);
     }
 
-
     return (
         <Router>
             <div className="App" >
                 <Navbar />
                 <Alert alert={alert} closeAlert={closeAlert} />
                 <Switch>
-                    <Route exact path='/' render={props => (
+                    <Route exact path='/' render={() => (
                         <Fragment>
                             <Search searchRegion={searchRegion} showAlert={showAlert} profile={profiles} />
                         </Fragment>

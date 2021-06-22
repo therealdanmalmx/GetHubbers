@@ -79,7 +79,7 @@ function Search(props) {
         setRegion(e.target.value)
     }
 
-    const onSubmit = (e) => {
+    const onSubmit = async (e) => {
         console.log(e.target.value)
         e.preventDefault();
         if (!codeCheck || codeList === undefined || codeList.length === 0) {
@@ -87,6 +87,7 @@ function Search(props) {
         } else if (region && !tatOrter.includes(region)) {
             props.showAlert(`${region} är inte en av Sveriges 20 största städer. Eller så är det felstavat.`);
         } else {
+            console.log('props.searchRegion', await props.searchRegion());
             props.searchRegion(codeList.join('+'), region);
             history.push('/profiles')
         }
