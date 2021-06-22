@@ -8,26 +8,32 @@ function ProfileItem(props) {
     return (
     <span  className="card">
             <span>
-                <img src={avatar_url} alt="" className="sideCard"/>
+                <img src={avatar_url} alt="GitHub avatar" className="sideCard"/>
             </span>
-            <div style={loginStyle}>
-                <span>{login}</span>
-            </div>
+            <span className='loginStyle'>{login}</span>
             <div>
-                <Link to={`/profile/${login}`} className="profileBtn">Se profil</Link>
-            </div>  
+                <Link to={`/profile/${login}`} className="profileBtn">Profil</Link>
+            </div>
     </span>
     )
 }
 
-const loginStyle = {
-    position: 'absolute',
-    top: 'auto',
-    margin: '0 0 0 5.5rem',
-    color: '#D7DBDD', 
-    fontSize: '2rem', 
-}
+// const loginStyle = {
 
+//     position: 'absolute',
+//     top: '6.5%',
+//     left: '50%',
+//     transform: 'translate(-50%, -50%)',
 
+//     textShadow: '2px 2px 10px #D7DBDD',
+//     color: 'black', 
+//     fontSize: '2rem', 
+//     backgroundColor: 'white',
+//     padding: '.5rem 0',
+//     opacity: '.8',
+//     width: '100%',
+//     borderTopLeftRadius: '10px',
+//     borderTopRightRadius: '10px',
+// }
 
 export default ProfileItem

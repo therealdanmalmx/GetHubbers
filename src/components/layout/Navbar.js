@@ -8,8 +8,9 @@ function Navbar(props) {
             <h1 style={logoText}>GetHubbers</h1>
             <p style={logoText}>Hitta kodare där kodare är</p> 
             </div>
-            <div style={ghLogo}>
-               <Link to='/'><i className="fab fa-github"></i></Link> 
+            <div>
+                {/* <Link to='/'><i class="fas fa-laptop-code"></i></Link>  */}
+                <Link to='/'> <img src={require('../../assets/gethubberslogo_s.png')} alt="Logo for the Kotlin language" /></Link> 
             </div>
         </div>
     )
@@ -23,7 +24,7 @@ const navbarStyle = {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding:' 0rem 2rem',
+    padding:' .5rem 2rem',
     zIndex: '1',
 }
 
@@ -33,11 +34,6 @@ const logoText = {
     padding: '0',
     textTransform: 'uppercase',
     textAlign:'left'
-}
-
-const ghLogo = {
-    color: '#D7DBDD',
-    fontSize: '5rem'
 }
 
 export default Navbar
