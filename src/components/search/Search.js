@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import tatOrter from '../../tatOrter'
+import citiesSweden from '../../citiesSweden'
 import LangSearch from '../search/LanguageSearch'
 import FrameSearch from '../search/FrameworkSearch'
 import CodeSearch from '../search/CodeSearch'
@@ -84,7 +84,7 @@ function Search(props) {
         e.preventDefault();
         if (!codeCheck || codeList === undefined || codeList.length === 0) {
             props.showAlert('Välj minst ett språk / ramverk');
-        } else if (region && !tatOrter.includes(region)) {
+        } else if (region && !citiesSweden.includes(region)) {
             props.showAlert(`${region} är inte en av Sveriges 20 största städer. Eller så är det felstavat.`);
         } else {
             console.log('props.searchRegion', await props.searchRegion());
@@ -98,7 +98,7 @@ function Search(props) {
     //     e.preventDefault();
     //     if (!langCheck && !frameCheck || langList === undefined && frameList === undefined || langList.length === 0 && frameList.length === 0) {
     //         props.showAlert('Välj minst ett språk / ramverk');
-    //     } else if (region && !tatOrter.includes(region)) {
+    //     } else if (region && !citiesSweden.includes(region)) {
     //         props.showAlert(`${region} är inte en av Sveriges 20 största städer. Eller så är det felstavat.`);
     //     } else {
     //         props.searchRegion(langList.join('+'), frameList.join('+'), region);

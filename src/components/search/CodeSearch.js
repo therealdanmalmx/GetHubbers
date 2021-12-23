@@ -99,6 +99,11 @@ const CodeSearch = (props) => {
           <p className="logoFontSize">Spring</p>
           <p className="chooseCode">Välj</p>
         </label>
+        <input type="checkbox" value='svelte' onChange={props.onChangeCode} name="svelte" id="svelte" style={{ display: 'none' }} />
+        <label htmlFor="svelte" className="devicon-svelte-plain text-lg" style={{ cursor: 'pointer' }}>
+          <p className="logoFontSize">Svelte</p>
+          <p className="chooseCode">Välj</p>
+        </label>
         <input type="checkbox" value="swift" onChange={props.onChangeCode} name="swift" id="swift" style={{ display: 'none' }} />
         <label htmlFor="swift" className="devicon-swift-plain text-lg" style={{ cursor: 'pointer' }}>
           <p className="logoFontSize">Swift</p>

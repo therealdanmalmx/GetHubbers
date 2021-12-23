@@ -8,7 +8,7 @@ import Search from "./components/search/Search";
 import Alert from "./components/layout/Alert";
 import Profiles from "./components/profiles/Profiles";
 import Profile from "./components/profiles/Profile";
-import tatOrter from '../src/tatOrter'
+import citiesSweden from '../src/citiesSweden'
 
 
 
@@ -18,7 +18,7 @@ function App() {
     const [profiler, setProfiler] = useState({});
 
     const searchRegion = async (codeList, region, setAlert) => {
-        if (tatOrter.includes(region) || region === '') {
+        if (citiesSweden.includes(region) || region === '') {
             // const res = await axios.get(`https://api.github.com/search/users?q=language:${langList && frameList ? `${langList}+${frameList}` : langList ? `${langList}` : frameList ? `${frameList}` : `${langList}+${frameList}`}+location:${region ? region : 'sweden'}&client_id=${process.env.REACT_APP_GH_CID}&client_secret=${process.env.REACT_APP_GH_CSC}`)
             const res = await axios.get(`https://api.github.com/search/users?q=language:${codeList ? codeList : ''}+location:${region ? region : 'sweden'}&client_id=${process.env.REACT_APP_GH_CID}&client_secret=${process.env.REACT_APP_GH_CSC}`)
             if (res.data.items < 1) {
