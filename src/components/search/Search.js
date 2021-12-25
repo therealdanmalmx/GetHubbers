@@ -1,19 +1,32 @@
 import React, { useState } from 'react'
 import citiesSweden from '../../citiesSweden'
-import LangSearch from '../search/LanguageSearch'
-import FrameSearch from '../search/FrameworkSearch'
 import CodeSearch from '../search/CodeSearch'
 import TextSearch from '../search/TextSearch'
 import { useHistory } from 'react-router-dom'
+import { useTranslation} from 'react-i18next'
+
 
 function Search(props) {
+
+    const [countryName, setCountryName] = useState({})
+
+    const { t } = useTranslation();
+    fetch('https://api.ipgeolocation.io/ipgeo?apiKey=bfbc4a6b5ce64f489ec7d7073fcca80e', {
+        method: 'GET'
+      })
+      .then(function(response) { return response.json(); })
+      .then(function(json) {
+        // use the json
+        setCountryName(json.country_name);
+        console.log('location', json);
+      });
+
+      console.log('countryName', countryName)
+
+
     let [region, setRegion] = useState('');
     let [codeCheck, setCodeCheck] = useState('');
     let [codeList, setCodeList] = useState([]);
-    let [langCheck, setLangCheck] = useState('');
-    let [frameCheck, setFrameCheck] = useState('');
-    let [langList, setLangList] = useState([]);
-    let [frameList, setframeList] = useState([]);
 
     let history = useHistory();
 
@@ -36,56 +49,20 @@ function Search(props) {
             }
         }
     }
-    // const onChangeLang = (e) => {
-    //     langCheck = e.target;
-    //     if (langCheck.checked && !langList.includes(e.target.name)) {
-    //         setLangCheck(langList.push(e.target.name));
-    //         console.log(langList);
-    //     } else if (!langCheck.checked) {
-    //         console.log(langList);
-    //         switch (e.target.name) {
-    //             case e.target.name:
-    //                 const removeLang = langList.indexOf(e.target.name)
-    //                 langList.splice(removeLang, 1)
-    //                 console.log(langList);
-    //                 break;
-
-    //             default:
-    //                 break;
-    //         }
-    //     }
-    // }
-
-    // const onChangeFrame = (e) => {
-    //     frameCheck = e.target;
-    //     if (frameCheck.checked && !frameList.includes(e.target.name)) {
-    //         setFrameCheck(frameList.push(e.target.name));
-    //         console.log(frameList);
-    //     } else if (!frameCheck.checked) {
-    //         switch (e.target.name) {
-    //             case e.target.name:
-    //                 const removeFrame = frameList.indexOf(e.target.name)
-    //                 frameList.splice(removeFrame, 1)
-    //                 console.log(frameList);
-    //                 break;
-
-    //             default:
-    //                 break;
-    //         }
-    //     }
-    // }
 
     const onType = (e) => {
         setRegion(e.target.value)
     }
 
     const onSubmit = async (e) => {
+
+        // const showAlertCode = {t("showAlertCode")}
         console.log(e.target.value)
         e.preventDefault();
         if (!codeCheck || codeList === undefined || codeList.length === 0) {
-            props.showAlert('Välj minst ett språk / ramverk');
+            props.showAlert(t('showAlertCode'));
         } else if (region && !citiesSweden.includes(region)) {
-            props.showAlert(`${region} är inte en av Sveriges 20 största städer. Eller så är det felstavat.`);
+            props.showAlert(`${region} ${t('showAlertRegion_1')} ${countryName === "United Kingdom" ? `the ${countryName}` : countryName}. ${t('showAlertRegion_2')}`);
         } else {
             console.log('props.searchRegion', await props.searchRegion());
             props.searchRegion(codeList.join('+'), region);
@@ -93,27 +70,13 @@ function Search(props) {
         }
 
     }
-    // const onSubmit = (e) => {
-    //     console.log(e.target.value)
-    //     e.preventDefault();
-    //     if (!langCheck && !frameCheck || langList === undefined && frameList === undefined || langList.length === 0 && frameList.length === 0) {
-    //         props.showAlert('Välj minst ett språk / ramverk');
-    //     } else if (region && !citiesSweden.includes(region)) {
-    //         props.showAlert(`${region} är inte en av Sveriges 20 största städer. Eller så är det felstavat.`);
-    //     } else {
-    //         props.searchRegion(langList.join('+'), frameList.join('+'), region);
-    //         history.push('/profiles')
-    //     }
-
-    // }
 
     return (
+
         <div>
             <form onSubmit={onSubmit}>
                 <div className="searchBar">
                     <CodeSearch onChangeCode={onChangeCode} />
-                    {/* <LangSearch onChangeLang={onChangeLang} />
-                    <FrameSearch onChangeFrame={onChangeFrame} /> */}
                 </div>
                 <div>
                     <TextSearch onType={onType} />

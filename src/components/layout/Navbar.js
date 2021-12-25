@@ -1,16 +1,18 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import { useTranslation} from 'react-i18next'
 
 function Navbar(props) {
+    const { t } = useTranslation();
+
     return (
         <div style={navbarStyle}>
             <div>
             <h1 style={logoText}>GetHubbers</h1>
-            <p style={logoText}>Hitta kodare där kodare är</p> 
+            <p style={logoText}>{t('logoText')}</p>
             </div>
             <div>
-                {/* <Link to='/'><i class="fas fa-laptop-code"></i></Link>  */}
-                <Link to='/'> <img src={require('../../assets/gethubberslogo_s.png')} alt="Logo for the Kotlin language" /></Link> 
+                <Link to='/'> <img src={require('../../assets/gethubberslogo_s.png')} alt="GetHubber's logo" /></Link>
             </div>
         </div>
     )
@@ -25,6 +27,8 @@ const navbarStyle = {
     justifyContent: 'space-between',
     alignItems: 'center',
     padding:' .5rem 2rem',
+    height: '150px',
+    maxHeight: '130px',
     zIndex: '1',
 }
 
@@ -38,4 +42,4 @@ const logoText = {
 
 export default Navbar
 
-    
+

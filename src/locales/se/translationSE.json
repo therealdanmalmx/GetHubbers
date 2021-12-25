@@ -1,0 +1,11 @@
+{
+    "logoText": "Hitta kodare var kodare är",
+    "chooseCode": "Välj",
+    "searchCoders": "Leta efter kodare",
+    "searchButton": "Sök",
+    "showAlertCode" : "Välj minst ett språk / ramverk",
+    "showAlertRegion_1":  "är inte en av de 20 största städerna i",
+    "showAlertRegion_2":  "Eller så är det felstavat.",
+    "citiesList_1": "En av de 20 största städer i",
+    "citiesList_2": "Eller lämna tomt för hela landet."
+}

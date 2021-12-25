@@ -6,15 +6,23 @@ function ProfileItem(props) {
     const {login, avatar_url, html_url} = props.profile;
 
     return (
-    <span  className="card">
-            <span>
-                <img src={avatar_url} alt="GitHub avatar" className="sideCard"/>
-            </span>
-            <span className='loginStyle'>{login}</span>
-            <div>
-                <Link to={`/profile/${login}`} className="profileBtn">Profil</Link>
-            </div>
-    </span>
+    // <span  className="card">
+
+
+    //         <span>
+    //             <img src={avatar_url} alt="GitHub avatar" className="sideCard"/>
+    //         </span>
+    //         <span className='loginStyle'>{login}</span>
+    //         <div>
+    //             <Link to={`/profile/${login}`} className="profileBtn">Profil</Link>
+    //         </div>
+    // </span>
+
+<div className="card">
+    <div class="card-name">{login}</div>
+    <img className="card-image" src={avatar_url} alt="Dude" />
+    <Link to={`/profile/${login}`} class="card-profile">Profile</Link>
+</div>
     )
 }
 
@@ -26,8 +34,8 @@ function ProfileItem(props) {
 //     transform: 'translate(-50%, -50%)',
 
 //     textShadow: '2px 2px 10px #D7DBDD',
-//     color: 'black', 
-//     fontSize: '2rem', 
+//     color: 'black',
+//     fontSize: '2rem',
 //     backgroundColor: 'white',
 //     padding: '.5rem 0',
 //     opacity: '.8',
