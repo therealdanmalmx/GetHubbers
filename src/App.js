@@ -10,7 +10,6 @@ import Profiles from "./components/profiles/Profiles";
 import Profile from "./components/profiles/Profile";
 import citiesSweden from '../src/citiesSweden'
 
-
 function App() {
     const [alert, setAlert] = useState(null);
     const [profiles, setProfiles] = useState([]);
