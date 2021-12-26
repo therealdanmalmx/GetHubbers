@@ -8,21 +8,9 @@ import { useTranslation} from 'react-i18next'
 
 function Search(props) {
 
-    const [countryName, setCountryName] = useState({})
+    const [countryName, setCountryName] = useState('');
 
     const { t } = useTranslation();
-    fetch('https://api.ipgeolocation.io/ipgeo?apiKey=bfbc4a6b5ce64f489ec7d7073fcca80e', {
-        method: 'GET'
-      })
-      .then(function(response) { return response.json(); })
-      .then(function(json) {
-        // use the json
-        setCountryName(json.country_name);
-        console.log('location', json);
-      });
-
-      console.log('countryName', countryName)
-
 
     let [region, setRegion] = useState('');
     let [codeCheck, setCodeCheck] = useState('');
@@ -56,7 +44,6 @@ function Search(props) {
 
     const onSubmit = async (e) => {
 
-        // const showAlertCode = {t("showAlertCode")}
         console.log(e.target.value)
         e.preventDefault();
         if (!codeCheck || codeList === undefined || codeList.length === 0) {

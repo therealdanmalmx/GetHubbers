@@ -127,7 +127,6 @@ a:hover {
 /* SEARCH BOX */
 
 .search {
-  display: inline-block;
   overflow: hidden;
   width: 100%;
   margin: auto;
@@ -142,6 +141,10 @@ a:hover {
   padding: 1.5rem;
   font-size: 1rem;
   outline: none;
+}
+
+[class*="devicon-"] {
+  padding: 0 0.70rem;
 }
 
 .chooseCode {
@@ -181,12 +184,11 @@ a:hover {
 
 .logoStyle {
   display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   padding: 0.5rem 0;
   width: 100%;
-  margin: auto;
 }
 
 /* SEARCH ICONS*/
@@ -197,10 +199,10 @@ input[type='checkbox'] {
 }
 
 label {
-  border-bottom: 3px solid transparent;
+  border-bottom: 5px solid transparent;
 }
 :checked + label {
-  border-bottom: 3px solid #52be80;
+  border-bottom: 5px solid #52be80;
 }
 
 .text-lg {
@@ -235,7 +237,7 @@ label {
 
 .backBtn {
   position: fixed;
-  top: 8rem;
+  top: 8.5rem;
   left: 2rem;
   text-transform: uppercase;
   color: #d7dbdd;
@@ -392,6 +394,37 @@ img.card-image {
   color: white;
   background: black;
   border: none;
+}
+
+// FOOTER
+
+#footer {
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  bottom: 0;
+  height: 150px;
+  width: 100%;
+  background: black;
+  margin-top: 8rem;
+}
+
+.country {
+  background: black;
+  margin: 2rem;
+  color: white;
+  padding: 1rem;
+  border: none;
+  // border: 3px solif grey;
+  // border-radius: 15px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;       /* Remove default arrow */
 }
 
 // MEDIA QUERIES

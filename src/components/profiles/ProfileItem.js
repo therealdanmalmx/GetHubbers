@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 
 function ProfileItem(props) {
-    const {login, avatar_url, html_url} = props.profile;
+    const { login, avatar_url } = props.profile;
 
     return (
     // <span  className="card">

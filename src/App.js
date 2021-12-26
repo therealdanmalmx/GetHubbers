@@ -9,22 +9,17 @@ import Alert from "./components/layout/Alert";
 import Profiles from "./components/profiles/Profiles";
 import Profile from "./components/profiles/Profile";
 import citiesSweden from '../src/citiesSweden'
+import Footer from './components/layout/Footer';
+import './i18n'
+
 
 function App() {
     const [alert, setAlert] = useState(null);
     const [profiles, setProfiles] = useState([]);
     const [profiler, setProfiler] = useState({});
-    const [countryName, setCountryName] = useState({})
 
-    fetch('https://api.ipgeolocation.io/ipgeo?apiKey=bfbc4a6b5ce64f489ec7d7073fcca80e&lang=de', {
-        method: 'GET'
-      })
-      .then(function(response) { return response.json(); })
-      .then(function(json) {
-        // use the json
-        setCountryName(json.country_name);
-        console.log('country', countryName);
-      });
+
+    const countryName = localStorage.getItem('countryName');
 
     const searchRegion = async (codeList, region, setAlert) => {
         if (citiesSweden.includes(region) || region === '') {
@@ -71,6 +66,7 @@ function App() {
                         <Profile {...props} getProfile={getProfile} profiler={profiler} />
                     )} />
                 </Switch>
+                <Footer />
             </div >
         </Router>
     );
