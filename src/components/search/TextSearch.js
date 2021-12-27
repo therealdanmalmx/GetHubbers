@@ -14,8 +14,8 @@ function TextSearch(props) {
     return (
         <div>
             <span className="search">
+                <h3 className="search-heading">{t('searchCoders').toLowerCase()}</h3>
                 {/* <h3 style={textSearchStyle}>{t('searchCoders').toLowerCase()}</h3> */}
-                <h3 className="textSearchStyle">{t('searchCoders').toLowerCase()}</h3>
                 <input className="searchBox" type="text" value={props.region} onChange={props.onType} placeholder={cityInfo()} />
                 <input className="btn" type="submit" value={t('searchButton')} style={{fontWeight: 'bold'}}/>
             </span>

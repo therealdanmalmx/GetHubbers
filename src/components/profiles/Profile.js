@@ -10,6 +10,7 @@ function Profile(props) {
     }, [])
 
     const {avatar_url, html_url, name, hireable, blog, bio, location, company, email} = props.profiler;
+
     return (
 
         <Fragment>

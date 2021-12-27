@@ -175,11 +175,15 @@ a:hover {
 /* SEARCH BOX */
 
 .search {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  // grid-template-columns: 1fr 1fr;
+  // grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+  "a a"
+  "b c";
   justify-content: center;
   align-items: center;
-  margin-top: 12rem;
+  margin-top: 15rem;
   // overflow: hidden;
   // width: 100%;
   // margin: auto;
@@ -189,22 +193,53 @@ a:hover {
   // transform: translateY(-45%);
 }
 
-.searchBox {
-  display: flex;
-  flex-direction: column;
+h3.search-heading {
+  grid-area: a;
+  justify-content: center;
+  align-items: center;
+  color: #F7F9F9;
+  margin-bottom: 10rem;
+  margin: 3rem auto;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 5px black;
+  font-size: 2rem
+
+}
+input.searchBox {
+  grid-area: b;
+  place-self: center center;
   justify-content: center;
   align-items: center;
   width: 680px;
   max-width: 800px;
+  margin-right: 1.5rem;
   padding: 1.5rem;
   font-size: 1rem;
   outline: none;
-  text-align: center;
 }
 
-.textSearchStyle {
-  display: static;
+input.btn {
+  grid-area: c;
+  text-transform: uppercase;
+  background: white;
+  color: black;
+  cursor: pointer;
+  outline: none;
+  width: 200px;
+  max-width: 800px;
+  padding: 1.55rem;
+  font-size: 1rem;
+  border: none;
+  // margin-left: 1rem;
 }
+
+input.btn:hover {
+  transition: ease-in 0.2s;
+  background: #212f3d;
+  color: #d7dbdd;
+}
+
 
 [class*="devicon-"] {
   padding: 0 0.70rem;
@@ -288,28 +323,6 @@ label {
   width: 100%;
 }
 /* BUTTONS */
-
-.btn {
-  text-transform: uppercase;
-  background: white;
-  color: black;
-  cursor: pointer;
-  outline: none;
-  width: 200px;
-  max-width: 800px;
-  padding: 1.55rem;
-  font-size: 1rem;
-  border: none;
-  margin-left: 1rem;
-  height: 100%;
-}
-
-.btn:hover {
-  transition: ease-in 0.2s;
-  background: #212f3d;
-  color: #d7dbdd;
-  margin-top: 1rem;
-}
 
 .backBtn {
   position: fixed;
@@ -587,23 +600,27 @@ select {
     text-align: center;
     padding: 0.5rem 0;
   }
-  .btn {
-    width: 300px;
-    max-width: 400px;
-    margin-top: 1rem;
-    margin-left: 0;
-  }
   .search {
-    flex-direction: column;
-    justify-content: flex-start;
     margin-top: 8rem;
+    grid-template-areas:
+    "a"
+    "b"
+    "c";
   }
-  .searchBox {
-    flex-direction: column;
-    width: 300px;
-    max-width: 400px;
-    height: 100%;
-    overflow: hidden;
+
+  h3.search-heading {
+
+  }
+  input.searchBox {
+    width: 350px;
+    max-width: 450px;
+    margin-right: 0;
+  }
+
+  input.btn {
+    width: 350px;
+    max-width: 450px;
+    margin-top: 1rem;
   }
   textarea.searchBox {
     vertical-align: middle;
