@@ -1,27 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import i18n from '../../i18n'
 
 
-const changeCountry = (country, language) => {
-    return () => {
-        i18n.changeLanguage(language);
-        localStorage.setItem('countryName', country);
-    }
+const changeCountry = (e) => {
+
+    const country = e.target.value.split(",")[0]
+    const language = e.target.value.split(",")[1].replace(" ", "");
+
+    i18n.changeLanguage(language);
+    localStorage.setItem('countryName', country);
+    console.log('name',  country);
+
 }
 
 const Footer = () => {
+
+    useState((language) => {
+        i18n.changeLanguage(language);
+
+    })
     const { t } = useTranslation();
     return (
         <div id="footer">
-            <button onClick={changeCountry('United Kingdom', 'en')}>{t('uk')}</button>
-            <button onClick={changeCountry('Portugal', 'pt')}>{t('portugal')}</button>
-            <button onClick={changeCountry('Sweden', 'se')}>{t('sweden')}</button>
-            {/* <select className="choose-country" id="country" name={t('chooseCountry')} size="1">
-                <option value="se">{t('sweden')}</option>
-                <option value=>{t('portugal')}</option>
-                <option onChange={changeCountry('Sweden', 'se')}>{t('sweden')}</option>
-            </select> */}
+            <select
+                className="choose-country"
+                value={localStorage.getItem('i18nextLang')}
+                id="country"
+                size="1"
+                onChange={changeCountry}
+            >
+                <option value="United Kingdom, en">{t('uk')}</option>
+                <option value="Portugal, pt">{t('portugal')}</option>
+                <option value="Sweden, se">{t('sweden')}</option>
+            </select>
         </div>
     )
 }

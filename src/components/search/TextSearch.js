@@ -8,23 +8,31 @@ function TextSearch(props) {
     const countryName = localStorage.getItem('countryName');
 
     const cityInfo = () => {
-        return `${t('citiesList_1')} ${citiesSweden.length} ${t('citiesList_2')} ${countryName === "United Kingdom" ? `the ${countryName}` : countryName}. ${t('citiesList_3')}`
+        return `${t('citiesList_1')} ${citiesSweden.length} ${t('citiesList_2')} ${countryName === "United Kingdom" ? `The ${countryName}` : countryName}. ${t('citiesList_3')}`
     }
 
     return (
-    <span className="search">
-        <h3 style={textSearchStyle}>{t('searchCoders').toLowerCase()}</h3>
-        <input className="searchBox" type="text" value={props.region} onChange={props.onType} placeholder={cityInfo()} />
-        <input className="btn" type="submit" value={t('searchButton')} style={{fontWeight: 'bold'}}/>
-    </span>
+        <div>
+            <span className="search">
+                {/* <h3 style={textSearchStyle}>{t('searchCoders').toLowerCase()}</h3> */}
+                <h3 className="textSearchStyle">{t('searchCoders').toLowerCase()}</h3>
+                <input className="searchBox" type="text" value={props.region} onChange={props.onType} placeholder={cityInfo()} />
+                <input className="btn" type="submit" value={t('searchButton')} style={{fontWeight: 'bold'}}/>
+            </span>
+
+        </div>
     )
 }
 
 const textSearchStyle = {
-    verticalAlign: 'middle',
-    paddingTop: '3rem',
+    // position: 'absolute',
+    // top: '15rem',
+    // left: '50%',
+    // transform: 'translateX(-50%)',
     color: '#F7F9F9',
-    marginBottom: '3rem',
+    marginBottom: '10rem',
+    margin: '0 auto',
+    textAlign: 'center',
     textTransform: 'uppercase',
     textShadow: '1px 1px 5px black',
     fontSize: '2rem'

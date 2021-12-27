@@ -7,12 +7,12 @@ function Navbar(props) {
 
     return (
         <div style={navbarStyle}>
-            <div>
+            <div className="navbar">
             <h1 style={logoText}>GetHubbers</h1>
             <p style={logoText}>{t('logoText')}</p>
             </div>
             <div>
-                <Link to='/'> <img src={require('../../assets/gethubberslogo_s.png')} alt="GetHubber's logo" /></Link>
+                <Link to='/'> <img className="logo" src={require('../../assets/gethubberslogo_s.png')} alt="GetHubber's logo" /></Link>
             </div>
         </div>
     )

@@ -8,15 +8,15 @@ import { useTranslation} from 'react-i18next'
 
 function Search(props) {
 
-    const [countryName, setCountryName] = useState('');
-
     const { t } = useTranslation();
 
     let [region, setRegion] = useState('');
     let [codeCheck, setCodeCheck] = useState('');
-    let [codeList, setCodeList] = useState([]);
+    let [codeList] = useState([]);
 
     let history = useHistory();
+
+    let countryName = localStorage.getItem("countryName");
 
     const onChangeCode = (e) => {
         codeCheck = e.target;
