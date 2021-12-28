@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from 'react';
+import React, { useEffect, useState, Fragment } from 'react';
 import './App.scss';
 import axios from 'axios';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -11,20 +11,27 @@ import Profile from "./components/profiles/Profile";
 import citiesSweden from '../src/citiesSweden'
 import Footer from './components/layout/Footer';
 import './i18n'
+import getCountry from './components/utilities/getCountry';
 
 
 function App() {
     const [alert, setAlert] = useState(null);
     const [profiles, setProfiles] = useState([]);
     const [profiler, setProfiler] = useState({});
+    const [countryName, setCountryName] = useState('');  
 
+    
+    useEffect(() => {
+        getCountry();
+        setCountryName(localStorage.getItem('countryName'));
+    }, [localStorage.getItem('countryName')]);
 
-    const countryName = localStorage.getItem('countryName');
-
+    console.log(localStorage.getItem('countryName'))
+    
     const searchRegion = async (codeList, region, setAlert) => {
         if (citiesSweden.includes(region) || region === '') {
             // const res = await axios.get(`https://api.github.com/search/users?q=language:${langList && frameList ? `${langList}+${frameList}` : langList ? `${langList}` : frameList ? `${frameList}` : `${langList}+${frameList}`}+location:${region ? region : 'sweden'}&client_id=${process.env.REACT_APP_GH_CID}&client_secret=${process.env.REACT_APP_GH_CSC}`)
-            const res = await axios.get(`https://api.github.com/search/users?q=language:${codeList ? codeList : ''}+location:${region ? region : countryName}&client_id=${process.env.REACT_APP_GH_CID}&client_secret=${process.env.REACT_APP_GH_CSC}`)
+            const res = await axios.get(`https://api.github.com/search/users?q=language:${codeList ?? codeList}+location:${region ? region : countryName}&client_id=${process.env.REACT_APP_GH_CID}&client_secret=${process.env.REACT_APP_GH_CSC}`)
             if (res.data.items < 1) {
                 showAlert('Inga profiler hittades baserat på dina val');
             } else {

@@ -33,12 +33,13 @@ textarea.searchBox {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.95);
   margin: 0 auto;
   margin-top: 10rem;
   width: 1200px;
   height: 500px;
   border-radius: 25px;
+
 }
 
 .profile-image {
@@ -248,6 +249,9 @@ input.btn:hover {
 .choose-country {
   background-color: black;
   color: white;
+  font-size: 1rem;
+  padding: 1rem;
+  margin: 1rem;
 }
 .chooseCode {
   font-size: 0.8rem;

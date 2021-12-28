@@ -21,7 +21,7 @@ function Profile(props) {
                     <div>
                         {name && <div className="profile-information-name">{name}</div>}
                         {location && <div className="profile-information-location">{location}</div>}
-                        {email && <div className="profile-information-email">{email}</div>}
+                        {email && <div className="profile-information-email">Email: {email}</div>}
                         {bio && <div className="profile-information-presentation">{bio}</div>}
                     </div>
                     <div>
@@ -35,14 +35,13 @@ function Profile(props) {
                         </a>
                     </div>
                     <div className="profile-icons-website">
-                    {blog && (
+                        console.log('blog', blog)
                         <a href={blog} target="_blank" rel="noopener noreferrer">
                             <i className="fab fa-chrome fa-4x"></i>
                         </a>
-                    )}
                     </div>
-                    {hireable && (<div class="profile-icons-available">
-                        <i class="fas fa-briefcase fa-2x"></i>
+                    {hireable && (<div className="profile-icons-available">
+                        <i className="fas fa-briefcase fa-2x"></i>
                     </div>)}
                 </div>
             </div>
