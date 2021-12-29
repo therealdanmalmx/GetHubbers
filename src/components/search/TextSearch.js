@@ -5,18 +5,12 @@ import citiesSweden from '../../citiesSweden';
 function TextSearch(props) {
     const { t } = useTranslation();
 
-    const countryName = localStorage.getItem('countryName');
-
-    const cityInfo = () => {
-        return `${t('citiesList_1')} ${citiesSweden.length} ${t('citiesList_2')} ${countryName === "United Kingdom" ? `The ${countryName}` : countryName}. ${t('citiesList_3')}`
-    }
-
     return (
         <div>
             <span className="search">
                 <h3 className="search-heading">{t('searchCoders').toLowerCase()}</h3>
                 {/* <h3 style={textSearchStyle}>{t('searchCoders').toLowerCase()}</h3> */}
-                <input className="searchBox" type="text" value={props.region} onChange={props.onType} placeholder={cityInfo()} />
+                <input className="searchBox" type="text" value={props.region} onChange={props.onType} placeholder={t('citiesList_1')} />
                 <input className="btn" type="submit" value={t('searchButton')} style={{fontWeight: 'bold'}}/>
             </span>
 

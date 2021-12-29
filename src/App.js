@@ -3,23 +3,22 @@ import './App.scss';
 import axios from 'axios';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Navbar from "./components/layout/Navbar";
-import Search from "./components/search/Search";
 import Alert from "./components/layout/Alert";
-import Profiles from "./components/profiles/Profiles";
-import Profile from "./components/profiles/Profile";
-import citiesSweden from '../src/citiesSweden'
 import Footer from './components/layout/Footer';
-import './i18n'
 import getCountry from './components/utilities/getCountry';
+import Navbar from "./components/layout/Navbar";
+import Profile from "./components/profiles/Profile";
+import Profiles from "./components/profiles/Profiles";
+import Search from "./components/search/Search";
 
+// import citiesSweden from '../src/citiesSweden'
+import './i18n'
 
 function App() {
     const [alert, setAlert] = useState(null);
     const [profiles, setProfiles] = useState([]);
     const [profiler, setProfiler] = useState({});
     const [countryName, setCountryName] = useState('');  
-
     
     useEffect(() => {
         getCountry();
@@ -29,7 +28,7 @@ function App() {
     console.log(localStorage.getItem('countryName'))
     
     const searchRegion = async (codeList, region, setAlert) => {
-        if (citiesSweden.includes(region) || region === '') {
+        if (region || region === '') {
             // const res = await axios.get(`https://api.github.com/search/users?q=language:${langList && frameList ? `${langList}+${frameList}` : langList ? `${langList}` : frameList ? `${frameList}` : `${langList}+${frameList}`}+location:${region ? region : 'sweden'}&client_id=${process.env.REACT_APP_GH_CID}&client_secret=${process.env.REACT_APP_GH_CSC}`)
             const res = await axios.get(`https://api.github.com/search/users?q=language:${codeList ?? codeList}+location:${region ? region : countryName}&client_id=${process.env.REACT_APP_GH_CID}&client_secret=${process.env.REACT_APP_GH_CSC}`)
             if (res.data.items < 1) {

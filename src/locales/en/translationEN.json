@@ -6,7 +6,7 @@
     "showAlertCode" : "Choose at least one language / framework",
     "showAlertRegion_1":  "is not on of the 20:est largest cities in",
     "showAlertRegion_2":  "Or it might be misspelled.",
-    "citiesList_1": "One of the",
+    "citiesList_1": "Type a city. Or empty for whole country.",
     "citiesList_2": "largest cities in",
     "citiesList_3": "Empty searches the whole country.",
     "chooseCountry": "Choose country",
