@@ -509,28 +509,17 @@ img.card-image {
   display: flex;
   justify-content: flex-end;
   bottom: 0;
-  height: 150px;
+  height: 75px;
   width: 100%;
   background: black;
   margin-top: 8rem;
 }
 
-.country {
-  background: black;
-  margin: 2rem;
-  color: white;
-  padding: 1rem;
-  border: none;
-  // border: 3px solif grey;
-  // border-radius: 15px;
-  font-size: 1rem;
-  font-weight: bold;
-}
-
-select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;       /* Remove default arrow */
+.flags {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-right: 3rem;
 }
 
 // MEDIA QUERIES
@@ -629,4 +618,27 @@ select {
   textarea.searchBox {
     vertical-align: middle;
   }
+}
+
+// FLAGS
+
+.fib {
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+.fi {
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  position: relative;
+  display: inline-block;
+  width: 1.33333333em;
+  line-height: 1em;
+}
+.fi:before {
+  content: '\00a0';
+}
+.fi.fis {
+  width: 1em;
 }
