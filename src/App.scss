@@ -247,13 +247,6 @@ input.btn:hover {
   padding: 0 0.70rem;
 }
 
-.choose-country {
-  background-color: black;
-  color: white;
-  font-size: 1rem;
-  padding: 1rem;
-  margin: 1rem;
-}
 .chooseCode {
   font-size: 0.8rem;
   margin: 0.8rem 0 0.4rem 0;
@@ -305,10 +298,10 @@ input[type='checkbox'] {
   -webkit-appearance: none;
 }
 
-label {
+input[type='checkbox'] + label {
   border-bottom: 5px solid transparent;
 }
-:checked + label {
+input[type='checkbox']:checked + label {
   border-bottom: 5px solid #52be80;
 }
 
@@ -516,11 +509,34 @@ img.card-image {
   margin-top: 8rem;
 }
 
-.flags {
+.flags  {
   display: flex;
   justify-content: space-around;
   align-items: center;
   margin-right: 3rem;
+  height: 100%;
+}
+
+// radio butons
+
+.input-hidden {
+  display: none;
+}
+
+input[type=radio] + label > img {
+  width: 30px;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-left: 10px;
+}
+
+input[type=radio]:checked + label > img {
+  opacity: 0.5;
+  width: 32px;
+  pointer-events: none;
+  cursor: not-allowed;
+  border: green 3px solid;
+  border-radius: 50%;
 }
 
 // MEDIA QUERIES
@@ -602,9 +618,6 @@ img.card-image {
     "c";
   }
 
-  h3.search-heading {
-
-  }
   input.searchBox {
     width: 350px;
     max-width: 450px;
@@ -619,27 +632,4 @@ img.card-image {
   textarea.searchBox {
     vertical-align: middle;
   }
-}
-
-// FLAGS
-
-.fib {
-  background-size: contain;
-  background-position: 50%;
-  background-repeat: no-repeat;
-}
-.fi {
-  background-size: contain;
-  background-position: 50%;
-  background-repeat: no-repeat;
-  position: relative;
-  display: inline-block;
-  width: 1.33333333em;
-  line-height: 1em;
-}
-.fi:before {
-  content: '\00a0';
-}
-.fi.fis {
-  width: 1em;
 }

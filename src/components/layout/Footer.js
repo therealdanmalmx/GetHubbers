@@ -1,47 +1,75 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import i18n from '../../i18n'
-import { CircleFlag } from 'react-circle-flags'
-const changeCountry = (e) => {
 
-    const country = e.target.value.split(",")[0]
-    const language = e.target.value.split(",")[1].replace(" ", "");
-
-    i18n.changeLanguage(language);
-    localStorage.setItem('countryName', country);
-
-}
 
 
 const Footer = () => {
+    const [countryName, setCountryName] = useState('');
+    
+    // useEffect(() =>{
+    //     localStorage.setItem('countryName', country)
+    // })
     const { t } = useTranslation();
+    
+    const changeCountry = (e) => {
 
+        let hiddenInput = document.querySelector('.input-hidden');
+        if (hiddenInput.checked === true) {
+            hiddenInput.disabled = true;
+        } else {
+            hiddenInput.disabled = false;
+        }
+     
+        i18n.changeLanguage(e.target.value);
+        setCountryName(localStorage.setItem('countryName', e.target.id)) ;
+    }
     return (
         <div id="footer">
             <div className="flags">
                 <h4 style={{color: 'white'}}>{t('chooseCountry')}:</h4>
-                <input type="image" src="https://hatscripts.github.io/circle-flags/flags/gb.svg" title={t('uk')} width="30" style={{marginLeft: '10px'}} onClick={changeCountry} value="United Kingdom, en" />
-                <input type="image" src="https://hatscripts.github.io/circle-flags/flags/pt.svg" title={t('portugal')} width="30" style={{marginLeft: '10px'}} onClick={changeCountry} value="Portugal, pt" />
-                <input type="image" src="https://hatscripts.github.io/circle-flags/flags/se.svg" title={t('sweden')} width="30" style={{marginLeft: '10px'}} onClick={changeCountry} value="Sweden, se" />
-
+                <div>
+                    <input 
+                        type="radio" 
+                        name="country" 
+                        id="United Kingdom" 
+                        className="input-hidden" 
+                        onClick={changeCountry} 
+                        value="en"
+                    />
+                    <label for="United Kingdom">
+                    <img 
+                        src="https://hatscripts.github.io/circle-flags/flags/gb.svg" 
+                        alt="United Kongdom's flag as a cirlcle" />
+                    </label>
+                </div>
+                <input 
+                    type="radio" 
+                    name="country" 
+                    id="Portugal" 
+                    className="input-hidden" 
+                    onClick={changeCountry} 
+                    value="pt"
+                />
+                <label for="Portugal">
+                <img 
+                    src="https://hatscripts.github.io/circle-flags/flags/pt.svg" 
+                    alt="Portugal's flag as a cirlcle" />
+                </label>
+                <input 
+                    type="radio" 
+                    name="country" 
+                    id="Sweden" 
+                    className="input-hidden" 
+                    value="se"
+                    onClick={changeCountry} 
+                />
+                <label for="Sweden">
+                <img 
+                    src="https://hatscripts.github.io/circle-flags/flags/se.svg" 
+                    alt="Sweden's flag as a cirlcle" />
+                </label>
             </div>
-            {/* <span class="fib fi-pt"><button onClick={changeCountry} value="Portugal, pt">{t('portugal')}</button></span> 
-            <span class="fib fi-se"><button onClick={changeCountry} value="Sweden, se">{t('sweden')}</button></span>  */}
-            {/* <button onClick={changeCountry} class="fib fi-pt" value="Portugal, pt">{t('portugal')}</button>
-            <button onClick={changeCountry} class="fib fi-se" value="Sweden, se">{t('sweden')}</button> */}
-
-            {/* <select
-                className="choose-country"
-                style={{border: 'none', overflow: 'hidden'}}
-                value={ localStorage.getItem('i18nextLang') }
-                id="country"
-                size="3"
-                onChange={changeCountry}
-            >
-                <option data-imgagesrc={pt} style={{marginTop: '10px'}} value="United Kingdom, en">{t('uk')}</option>
-                <option style={{marginTop: '10px'}} value="Portugal, pt">{t('portugal')}</option>
-                <option style={{marginTop: '10px'}} value="Sweden, se">{t('sweden')}</option>
-            </select> */}
         </div>
     )
 }
