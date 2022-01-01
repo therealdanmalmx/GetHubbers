@@ -18,7 +18,11 @@ textarea.searchBox {
   justify-content: center;
   align-items: center;
   font-family: 'Roboto', sans-serif;
+}
 
+.hideInDesktop {
+
+  display: none;
 }
 
 .navbar {
@@ -245,6 +249,7 @@ input.btn:hover {
 
 
 [class*="devicon-"] {
+  justify-content: space-around;
   padding: 0 0.70rem;
 }
 
@@ -260,7 +265,7 @@ input.btn:hover {
   top: 130px;
   overflow: hidden;
   width: 100%;
-  height: 70px;
+  height: auto;
   display: flex;
   justify-content: space-between;
   background-color: #f2f4f4;
@@ -288,6 +293,7 @@ input.btn:hover {
   justify-content: center;
   align-items: center;
   text-align: center;
+  flex-wrap: wrap;
   padding: 0.5rem 0;
   width: 100%;
 }
@@ -553,7 +559,9 @@ input[type=radio]:checked + label > img {
     padding: 2.3rem 0.5rem;
   }
   .logoStyle {
-    padding: 1.2rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
 
   .loginStyle {
@@ -599,9 +607,9 @@ input[type=radio]:checked + label > img {
 }
 
 @media (max-width: 480px) {
-  .card {
-    scale: 0.5;
-  }
+  // .card {
+  //   scale: 0.5;
+  // }
   .logo {
     display: none;
   }
@@ -632,5 +640,22 @@ input[type=radio]:checked + label > img {
   }
   textarea.searchBox {
     vertical-align: middle;
+  }
+
+  .logoStyle {
+    padding: 1rem 0;
+    display: none;
+  }
+
+  [class*="devicon-"] {
+    padding: 1rem;
+  }
+  
+  .hideInDesktop {
+    display: block;
+  }
+
+  .searchBar {
+    height: 50px;
   }
 }

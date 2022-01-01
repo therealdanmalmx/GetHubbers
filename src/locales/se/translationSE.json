@@ -6,12 +6,16 @@
     "showAlertCode" : "Välj minst ett språk / ramverk",
     "showAlertRegion_1":  "är inte en av de 20 största städerna i",
     "showAlertRegion_2":  "Eller så är det felstavat.",
-    "citiesList_1": "Skriv en stad. Lämna tomt för hela landet.",
+    "citiesList_1": "Stad. Tomt för hela landet.",
     "citiesList_2": "största städerna i",
     "citiesList_3": "Eller lämna tomt för hela landet.",
     "chooseCountry": "Välj land",
     "sweden": "Sverige",
     "portugal": "Portugal",
     "uk": "Storbrittanien",
-    "worksat": "Jobbar på"
+    "worksat": "Jobbar på",
+    "opeddropdown": "Tryck för att",
+    "opeddropdownopen": "öppna",
+    "opeddropdownclose": "stänga"
+
 }
