@@ -1,12 +1,11 @@
 import React from 'react';
 import { useTranslation} from 'react-i18next';
 
-
 const openDropdown = () => {
-
+  
   let searchBar = document.querySelector('.searchBar');
   let logoStyle = document.querySelector('.logoStyle');
-
+  
   if (searchBar.style.height !== 'auto') {
     searchBar.style.height = 'auto';
     logoStyle.style.display = 'flex'
@@ -17,17 +16,17 @@ const openDropdown = () => {
     logoStyle.style.display = 'none'
   }
   
-
+  
 }
 
 const CodeSearch = (props) => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <span className="logos">
         {/* <h2 className='hideInDesktop' onClick={openDropdown}>{`${t('opeddropdown') ${t('opeddropdownopen')}`}`}</h2> */}
         {/* <h2 className='hideInDesktop' onClick={openDropdown}>{ `${t('opeddropdown')}` `${t('opeddropdownopen')}` } </h2> */}
-        <h3 className='hideInDesktop' onClick={openDropdown}>{` ${t('opeddropdown')} ${t('opeddropdownopen') === t('opeddropdownopen') ? t('opeddropdownopen') : t('opeddropdownclose')}` }</h3>
+        <h3 className='hideInDesktop' onClick={openDropdown}>Open</h3>
       <span className='logoStyle'>
         <input type="checkbox" value='angular' onChange={props.onChangeCode} name="angular js" id="angular" style={{ display: 'none' }} />
         <label htmlFor="angular" className="devicon-angularjs-plain text-lg" style={{ cursor: 'pointer', hover: 'JavaScript' }}>

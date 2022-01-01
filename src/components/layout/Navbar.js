@@ -7,10 +7,14 @@ function Navbar() {
 
     return (
         <div style={navbarStyle}>
-            <Link to='/' className="navbar">
-            <h1 style={logoText}>GetHubbers</h1>
-            <p style={logoText}>{t('logoText')}</p>
-            </Link>
+            <div>
+                <Link to='/' className="navbar">
+                    <div>
+                        <h1 style={logoText}>GetHubbers</h1>
+                        <p style={logoText}>{t('logoText')}</p>
+                    </div>
+                </Link>
+            </div>
             <div>
                 <Link to='/'> <img className="logo" src={require('../../assets/gethubberslogo_s.png')} alt="GetHubber's logo" /></Link>
             </div>
