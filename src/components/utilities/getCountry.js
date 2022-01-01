@@ -1,6 +1,6 @@
 import { useState } from 'react';
-function setName(lan) {
-    localStorage.setItem('countryName', lan)
+function setName(country) {
+    localStorage.setItem('countryName', country)
 }
 
 const getCountry = () => {
@@ -11,13 +11,13 @@ const getCountry = () => {
 
     switch (language) {
         case 'se': 
-            return setName('Sweden')
+            return setName('Sweden');
             break;
         case 'pt': 
-            return setName('Portugal')
+            return setName('Portugal');
             break;
         case 'en': 
-            return setName('United Kingdom')
+            return setName('United Kingdom');
             break;
     }
 

@@ -35,7 +35,6 @@ function Profile(props) {
                         </a>
                     </div>
                     <div className="profile-icons-website">
-                        console.log('blog', blog)
                         <a href={blog} target="_blank" rel="noopener noreferrer">
                             <i className="fab fa-chrome fa-4x"></i>
                         </a>

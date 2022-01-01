@@ -1,28 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useHistory } from 'react-router';
 import i18n from '../../i18n'
 
 
 
-const Footer = () => {
+function Footer() {
     const [countryName, setCountryName] = useState('');
-    
-    // useEffect(() =>{
-    //     localStorage.setItem('countryName', country)
-    // })
+
     const { t } = useTranslation();
     
     const changeCountry = (e) => {
 
-        let hiddenInput = document.querySelector('.input-hidden');
+        // let hiddenInput = document.querySelector('.input-hidden');
+        let hiddenInput = document.querySelector('input[type="radio"]:checked');
+        console.log('inputType', hiddenInput)
         if (hiddenInput.checked === true) {
             hiddenInput.disabled = true;
+            
         } else {
             hiddenInput.disabled = false;
         }
-     
+        
         i18n.changeLanguage(e.target.value);
         setCountryName(localStorage.setItem('countryName', e.target.id)) ;
+        window.location.reload();
     }
     return (
         <div id="footer">
@@ -37,7 +39,7 @@ const Footer = () => {
                         onClick={changeCountry} 
                         value="en"
                     />
-                    <label for="United Kingdom">
+                    <label htmlFor="United Kingdom">
                     <img 
                         src="https://hatscripts.github.io/circle-flags/flags/gb.svg" 
                         alt="United Kongdom's flag as a cirlcle" />
@@ -51,7 +53,7 @@ const Footer = () => {
                     onClick={changeCountry} 
                     value="pt"
                 />
-                <label for="Portugal">
+                <label htmlFor="Portugal">
                 <img 
                     src="https://hatscripts.github.io/circle-flags/flags/pt.svg" 
                     alt="Portugal's flag as a cirlcle" />
@@ -64,7 +66,7 @@ const Footer = () => {
                     value="se"
                     onClick={changeCountry} 
                 />
-                <label for="Sweden">
+                <label htmlFor="Sweden">
                 <img 
                     src="https://hatscripts.github.io/circle-flags/flags/se.svg" 
                     alt="Sweden's flag as a cirlcle" />

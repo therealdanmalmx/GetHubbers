@@ -22,10 +22,10 @@ function App() {
     
     useEffect(() => {
         getCountry();
-        setCountryName(localStorage.getItem('countryName'));
-    }, [localStorage.getItem('countryName')]);
 
-    console.log(localStorage.getItem('countryName'))
+        setCountryName(localStorage.getItem('countryName'));
+    }, [countryName]);
+
     
     const searchRegion = async (codeList, region, setAlert) => {
         if (region || region === '') {
