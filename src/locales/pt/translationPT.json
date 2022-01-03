@@ -14,9 +14,7 @@
     "portugal": "Portugal",
     "uk": "Reino Unido",
     "worksat": "Trabalhe na",
-    "opeddropdown": "Clique para",
-    "opeddropdownopen": "mostrar",
-    "opeddropdownclose": "fechar"
-
-
+    "opendropdown": "Clique para",
+    "opendropdownopen": "mostrar",
+    "opendropdownclose": "fechar"
 }

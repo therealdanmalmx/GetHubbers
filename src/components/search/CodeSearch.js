@@ -1,32 +1,53 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslation} from 'react-i18next';
 
-const openDropdown = () => {
+// const openDropdown = () => {
   
-  let searchBar = document.querySelector('.searchBar');
-  let logoStyle = document.querySelector('.logoStyle');
+//   let searchBar = document.querySelector('.searchBar');
+//   let logoStyle = document.querySelector('.logoStyle');
   
-  if (searchBar.style.height !== 'auto') {
-    searchBar.style.height = 'auto';
-    logoStyle.style.display = 'flex'
-    logoStyle.style.flexWrap = 'wrap'
+//   if (searchBar.style.height !== 'auto') {
+//     searchBar.style.height = 'auto';
+//     logoStyle.style.display = 'flex'
+//     logoStyle.style.flexWrap = 'wrap'
+//     setShowClosed(`${t('opeddropdownopen')}`); 
     
-  } else {
-    searchBar.style.height = '50px';
-    logoStyle.style.display = 'none'
-  }
+//   } else {
+//     searchBar.style.height = '50px';
+//     logoStyle.style.display = 'none'
+//   }
   
   
-}
+// }
 
 const CodeSearch = (props) => {
+
+  const openDropdown = () => {
+  
+    let searchBar = document.querySelector('.searchBar');
+    let logoStyle = document.querySelector('.logoStyle');
+    
+    if (searchBar.style.height !== 'auto') {
+      searchBar.style.height = 'auto';
+      logoStyle.style.display = 'flex'
+      logoStyle.style.flexWrap = 'wrap'
+      setShowClosed(`${t('opendropdownclose')}`); 
+      
+    } else {
+      searchBar.style.height = '50px';
+      logoStyle.style.display = 'none'
+      setShowClosed(`${t('opendropdownopen')}`); 
+    }
+    
+    
+  }
   const { t } = useTranslation();
+
+  const [showClosed, setShowClosed] = useState(`${t('opendropdownopen')}`)
 
   return (
     <span className="logos">
-        {/* <h2 className='hideInDesktop' onClick={openDropdown}>{`${t('opeddropdown') ${t('opeddropdownopen')}`}`}</h2> */}
-        {/* <h2 className='hideInDesktop' onClick={openDropdown}>{ `${t('opeddropdown')}` `${t('opeddropdownopen')}` } </h2> */}
-        <h3 className='hideInDesktop' onClick={openDropdown}>Open</h3>
+        <h3 className='hideInDesktop' onClick={openDropdown}>{t('opendropdown')} {showClosed}</h3>
       <span className='logoStyle'>
         <input type="checkbox" value='angular' onChange={props.onChangeCode} name="angular js" id="angular" style={{ display: 'none' }} />
         <label htmlFor="angular" className="devicon-angularjs-plain text-lg" style={{ cursor: 'pointer', hover: 'JavaScript' }}>
