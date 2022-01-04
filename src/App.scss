@@ -24,6 +24,7 @@ textarea.searchBox {
   text-align: center;
   margin-top: 0.5rem;
   display: none;
+
 }
 
 .navbar {
@@ -252,6 +253,7 @@ input.btn:hover {
 [class*="devicon-"] {
   justify-content: space-around;
   padding: 0 0.70rem;
+  transition: height 1s ease-in-out;
 }
 
 .chooseCode {
@@ -271,6 +273,7 @@ input.btn:hover {
   justify-content: space-between;
   background-color: #f2f4f4;
   opacity: 0.9;
+  transition: height 1s ease-in-out;
 }
 
 .sideBox {
@@ -648,15 +651,16 @@ input[type=radio]:checked + label > img {
     display: none;
   }
 
+  .searchBar {
+    height: 50px;
+  }
+
   [class*="devicon-"] {
     padding: 1rem;
   }
   
   .hideInDesktop {
+    text-align: center;
     display: block;
-  }
-
-  .searchBar {
-    height: 50px;
   }
 }

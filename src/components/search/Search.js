@@ -62,9 +62,7 @@ function Search(props) {
 
         <div>
             <form onSubmit={onSubmit}>
-                <div className="searchBar">
-                    <CodeSearch onChangeCode={onChangeCode} />
-                </div>
+                <CodeSearch onChangeCode={onChangeCode} />
                 <div>
                     <TextSearch onType={onType} />
                 </div>
