@@ -213,8 +213,8 @@ h3.search-heading {
   text-transform: uppercase;
   text-shadow: 1px 1px 5px black;
   font-size: 2rem
-
 }
+
 input.searchBox {
   grid-area: b;
   place-self: center center;
@@ -624,22 +624,28 @@ input[type=radio]:checked + label > img {
     padding: 0.5rem 0;
   }
   .search {
-    margin-top: 8rem;
+    margin-top: 10rem;
     grid-template-areas:
     "a"
     "b"
     "c";
   }
+  h3.search-heading {
+    grid-area: a;
+  }
 
   input.searchBox {
+    grid-area: b;
     width: 350px;
     max-width: 450px;
     margin-right: 0;
   }
-
+  
   input.btn {
+    grid-area: c;
     width: 350px;
     max-width: 450px;
+    margin: 0 auto;
     margin-top: 1rem;
   }
   textarea.searchBox {

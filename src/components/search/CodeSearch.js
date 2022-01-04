@@ -17,7 +17,7 @@ const CodeSearch = (props) => {
       
     } else if (searchBar.style.height === '75vh') {
       searchBar.style.height = '50px';
-      logoStyle.style.transition ='all 0.5s ease-in-out';
+      logoStyle.style.transition ='all 0.3s ease-in-out';
       // logoStyle.style.display = 'none'
       setShowClosed(`${t('opendropdownopen')}`); 
       searchBar.style.transition ='height 0.3s ease-in-out';
